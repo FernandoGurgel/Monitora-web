@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -67,15 +68,21 @@ and open the template in the editor.
 		<fieldset>
 
 			<!-- TITULO DO FORMULARIO -->
-			<legend>Cadastro do Aluno</legend>
-
+			<c:if test="${aluno != null } ">
+				<legend>Editar do Aluno</legend>			
+			</c:if>
+			<c:if test="${aluno == null } ">
+				<legend>Cadastro do Aluno</legend>			
+			</c:if>
+			<input type="hidden" name="id" value="${aluno.id}"/>
+			
 			<!-- TEXTO-->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="idNome">Nome</label>
 				<div class="col-md-5">
 					<input id="idNome" name="nome" type="text"
 						placeholder="Nome do usuaÃ¡rio" class="form-control input-md"
-						required="">
+						required="" value="${aluno.nome}">
 
 				</div>
 			</div>
@@ -85,8 +92,8 @@ and open the template in the editor.
 				<label class="col-md-4 control-label" for="idDepto">Matricula</label>
 				<div class="col-md-5">
 					<input id="idMatricula" name="matricula" type="text"
-						placeholder="Numero de Matriucula" class="form-control input-md"
-						required="">
+						placeholder="Numero de Matriucula" class="form-control input-md" value="${aluno.matricula}"
+						required>
 
 				</div>
 			</div>
@@ -96,7 +103,7 @@ and open the template in the editor.
 				<label class="col-md-4 control-label" for="idUsuario">Curso</label>
 				<div class="col-md-5">
 					<input id="idCurso" name="curso" type="text"
-						placeholder="Nome do Curso" class="form-control input-md"
+						placeholder="Nome do Curso" class="form-control input-md" value="${aluno.curso}"
 						required="">
 
 				</div>
@@ -107,7 +114,7 @@ and open the template in the editor.
 				<label class="col-md-4 control-label" for="idUsuario">E-mail</label>
 				<div class="col-md-5">
 					<input id="idEmail" name="email" type="text"
-						placeholder="Email" class="form-control input-md"
+						placeholder="Email" class="form-control input-md" value="${aluno.email}"
 						required="">
 
 				</div>
@@ -118,7 +125,7 @@ and open the template in the editor.
 				<label class="col-md-4 control-label" for="idSenha">Senha</label>
 				<div class="col-md-5">
 					<input id="idSenha" name="senha" type="password"
-						placeholder="Digite a senha" class="form-control input-md"
+						placeholder="Digite a senha" class="form-control input-md" value="${aluno.senha}"
 						required="">
 
 				</div>

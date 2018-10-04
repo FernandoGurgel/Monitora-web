@@ -93,12 +93,12 @@ and open the template in the editor.
 
 				<!--Table body-->
 				<tbody>
-					<c:forEach var="l" items="${lista}">
+					<c:forEach var="dis" items="${lista}">
 						<tr>
-							<th scope="row">${l.id}</th>
-							<td>${l.nome }</td>
-							<td>${l.infomacoes }</td>
-							<td>${l.qtdVagas }</td>
+							<th scope="row">${dis.id}</th>
+							<td>${dis.nome}</td>
+							<td>${dis.informacoes}</td>
+							<td>${dis.qtdVagas}</td>
 
 							<td>
 								<a class="btn btn-primary" href="/disciplina/editar?id=${l.id}" role="button">Editar</a>

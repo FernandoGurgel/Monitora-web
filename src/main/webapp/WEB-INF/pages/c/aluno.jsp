@@ -102,9 +102,10 @@ and open the template in the editor.
 									<td>${aluno.email}</td>
 									<td>${aluno.tipoaluno}</td>
 
-									<td><a class="btn btn-primary" href="EditarAluno.html"
-										role="button">Editar</a> <a
-										href="/coordenandor/deletarAluno?id=${ aluno.id}">
+									<td>
+									<a class="btn btn-primary" href="/coordenandor/editarAluno?id=${ aluno.id}"
+										role="button">Editar</a> 
+										<a href="/coordenandor/deletarAluno?id=${ aluno.id}">
 											<button type="button" class="btn btn-danger">Excluir</button>
 									</a>
 								</tr>

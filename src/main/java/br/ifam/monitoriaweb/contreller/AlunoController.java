@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
 import br.ifam.monitoriaweb.bean.Aluno;
 import br.ifam.monitoriaweb.bean.ETipo;
 import br.ifam.monitoriaweb.repository.AlunoRepository;
@@ -18,7 +20,20 @@ public class AlunoController {
 	public String cadastra() {
 		return "c/cadastrarAluno";
 	}
+	
+	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.GET)
+	public ModelAndView editar(long id) {
+		ModelAndView view = new ModelAndView("c/cadastrarAluno");
+		Aluno aluno = ar.findById(id);
+		view.addObject("aluno", aluno);
+		return view;
+	}
 
+	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.POST)
+	public String editar(Aluno aluno) {
+		return "redirect:/coordenador/aluno";
+	}
+	
 	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.POST)
 	public String cadastra(Aluno bean, int tipo) {
 		bean.setTipoaluno((tipo == 1 ? ETipo.Aluno : ETipo.Monitor));
