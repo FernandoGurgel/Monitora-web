@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/09/2018, 15:36:11
+    Author     : carlos maciel
+*/
+
+
+
+#botaoSalvarLoginCoordenador{
+  margin-left:740px; 
+}
+
+#formularioLoginCoordenador{
+    margin-top:40px;
+     margin-left:400px;
+}
+
+
+
+#botaoSair{
+    margin-left:950px; 
+}
+
+#FormularioCadastroDisciplina{
+     margin-left:500px;
+}
+
+#botaoSalvarCadastrarDisciplina{
+    margin-left: 500px;
+}
+
+#TituloEditarDisciplina{
+      margin-left:50px;
+        
+}
+
+#botaoSalvarEditarDisciplina{
+    margin-left: 500px;
+}
+
+
+#formulariocadastroaluno{
+    margin-left: 100px;
+}
+
+#formularioeditaraluno{
+     margin-left: 100px;
+}
+
+#FormularioComboBoxCadastroSala{
+     margin-left:150px;
+}
+
+#FormularioCadastroSala{
+     margin-left:150px;
+}
+
+#botaoSalvarCadastrarSala{
+    margin-left: 150px;
+}
