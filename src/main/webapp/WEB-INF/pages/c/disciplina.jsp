@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -59,6 +61,19 @@ and open the template in the editor.
 	<!--Table-->
 
 	<div class="container">
+
+		<div class="row justify-content-end">
+			<div class="col-4 ">
+				<input class="form-control" type="search" size="50"
+					placeholder="Pesquisar por nome" aria-label="Search" autofocus
+					maxlength="120">
+			</div>
+			<div class="col-2 my-2">
+				<a class="btn btn-sm btn-outline-secondary"
+					href="/disciplina/cadastrar">Nova Disciplina</a>
+			</div>
+		</div>
+
 		<div class="span10 offset1">
 
 
@@ -69,49 +84,28 @@ and open the template in the editor.
 					<tr>
 						<th>ID</th>
 						<th>Nome</th>
-						<th>DescriÃ§Ã£o</th>
+						<th>Descrição</th>
 						<th>Quantidade de Vagas</th>
-						<th>AÃ§Ãµes</th>
+						<th>Ações</th>
 					</tr>
 				</thead>
 				<!--Table head-->
 
 				<!--Table body-->
 				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>CÃ¡lculo Diferencial e Integral</td>
-						<td>Limites, derivadas e integrais</td>
-						<td>12</td>
+					<c:forEach var="l" items="${lista}">
+						<tr>
+							<th scope="row">${l.id}</th>
+							<td>${l.nome }</td>
+							<td>${l.infomacoes }</td>
+							<td>${l.qtdVagas }</td>
 
-						<td><a class="btn btn-primary" href="EditarDisciplina.html"
-							role="button">Editar</a>
-							<button type="button" class="btn btn-danger">Excluir</button>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Estrutura de Dados</td>
-						<td>Lista simplesmente e duplamente encadeada</td>
-						<td>12</td>
-
-
-
-						<td><a class="btn btn-primary" href="EditarDisciplina.html"
-							role="button">Editar</a>
-							<button type="button" class="btn btn-danger">Excluir</button>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Processos de Desenvolvimento de Software</td>
-						<td>Scrum</td>
-						<td>12</td>
-
-						<td><a class="btn btn-primary" href="EditarDisciplina.html"
-							role="button">Editar</a>
-							<button type="button" class="btn btn-danger">Excluir</button>
-					</tr>
-
-
+							<td>
+								<a class="btn btn-primary" href="/disciplina/editar?id=${l.id}" role="button">Editar</a>
+								<a role="button" class="btn btn-danger" href="/disciplina/excluir?id=${l.id}">Excluir</a> 
+							</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 				<!--Table body-->
 
@@ -120,9 +114,6 @@ and open the template in the editor.
 	</div>
 
 	<!--Table-->
-
-
-
 
 	<!-- componentes - Jquery - bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -136,8 +127,6 @@ and open the template in the editor.
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-
-
 
 </body>
 </html>

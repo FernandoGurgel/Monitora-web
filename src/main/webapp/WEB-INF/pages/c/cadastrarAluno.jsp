@@ -128,7 +128,7 @@ and open the template in the editor.
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="idTipo">NÃ­vel</label>
 				<div class="col-md-4 row-md-10">
-					<select id="idTipo" name="tipoaluno" class="form-control">
+					<select id="idTipo" name="tipo" class="form-control">
 						<option value="1">Aluno</option>
 						<option value="2">Monitor</option>
 					</select>

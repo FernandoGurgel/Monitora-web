@@ -3,9 +3,8 @@ package br.ifam.monitoriaweb.bean;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Aluno extends Usuario implements Serializable {
@@ -17,7 +16,7 @@ public class Aluno extends Usuario implements Serializable {
 //	@JoinColumn(name="alucurso")
 	private String curso; 
 	//status
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private ETipo tipoaluno;
 	
 	public String getMatricula() {
@@ -32,8 +31,8 @@ public class Aluno extends Usuario implements Serializable {
 	public void setCurso(String curso) {
 		this.curso = curso;
 	}
-	public ETipo getTipoaluno() {
-		return tipoaluno;
+	public String getTipoaluno() {
+		return tipoaluno.name();
 	}
 	public void setTipoaluno(ETipo tipoaluno) {
 		this.tipoaluno = tipoaluno;

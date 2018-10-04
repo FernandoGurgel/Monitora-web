@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -62,12 +63,12 @@ and open the template in the editor.
 		<div class="row justify-content-end">
 			<div class="col-4 ">
 				<input class="form-control" type="search" size="50"
-					placeholder="Pesquisar por aluno ou matricula" aria-label="Search" autofocus
-					maxlength="120">
+					placeholder="Pesquisar por aluno ou matricula" aria-label="Search"
+					autofocus maxlength="120">
 			</div>
 			<div class="col-2 my-2">
-				<a class="btn btn-sm btn-outline-secondary"
-					href="/aluno/cadastrar">Novo Aluno</a>
+				<a class="btn btn-sm btn-outline-secondary" href="/aluno/cadastrar">Novo
+					Aluno</a>
 			</div>
 		</div>
 		<div class="row">
@@ -85,54 +86,31 @@ and open the template in the editor.
 								<th>Email</th>
 
 								<th>Tipo</th>
-								<th>AÃ§Ãµes</th>
+								<th>Ações</th>
 							</tr>
 						</thead>
 						<!--Table head-->
 
 						<!--Table body-->
 						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>Carlos</td>
-								<td>2014118970055</td>
-								<td>Analise de Sistemas</td>
-								<td>carlosbeto1996@gmail.com</td>
+							<c:forEach var="aluno" items="${lista}">
+								<tr>
+									<th scope="row">${aluno.id}</th>
+									<td>${aluno.nome}</td>
+									<td>${aluno.matricula}</td>
+									<td>${aluno.curso}</td>
+									<td>${aluno.email}</td>
+									<td>${aluno.tipoaluno}</td>
 
-								<td>Aluno</td>
-								<td><a class="btn btn-primary" href="EditarAluno.html"
-									role="button">Editar</a>
-									<button type="button" class="btn btn-danger">Excluir</button>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>Fernando Gurgel</td>
-								<td>20160033321</td>
-								<td>Analise de Sistemas</td>
-								<td>Fernando@gurgel.com</td>
-
-								<td>Monitor</td>
-								<td><a class="btn btn-primary" href="EditarAluno.html"
-									role="button">Editar</a>
-									<button type="button" class="btn btn-danger">Excluir</button>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>Fernando Cauper</td>
-								<td>201422345693</td>
-								<td>Analise de Sistemas</td>
-								<td>fernando@cauper.com</td>
-
-								<td>Monitor</td>
-								<td><a class="btn btn-primary" href="EditarAluno.html"
-									role="button">Editar</a>
-									<button type="button" class="btn btn-danger">Excluir</button>
-							</tr>
-
-
+									<td><a class="btn btn-primary" href="EditarAluno.html"
+										role="button">Editar</a> <a
+										href="/coordenandor/deletarAluno?id=${ aluno.id}">
+											<button type="button" class="btn btn-danger">Excluir</button>
+									</a>
+								</tr>
+							</c:forEach>
 						</tbody>
 						<!--Table body-->
-
 					</table>
 				</div>
 			</div>
@@ -140,9 +118,6 @@ and open the template in the editor.
 	</div>
 
 	<!--Table-->
-
-
-
 
 	<!-- componentes - Jquery - bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
