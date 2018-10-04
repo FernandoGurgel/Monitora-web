@@ -9,6 +9,21 @@ public class CoordenadorController {
 
 	@RequestMapping("/")
 	public String index() {
-		return "c/index.html";
+		return "c/index";
+	}
+	
+	@RequestMapping("/aluno")
+	public String aluno() {
+		return "c/aluno";
+	}
+	
+	@RequestMapping("/disciplina")
+	public String disciplina() {
+		return "c/disciplina";
+	}
+	
+	@RequestMapping("/sala")
+	public String sala() {
+		return "c/sala";
 	}
 }
