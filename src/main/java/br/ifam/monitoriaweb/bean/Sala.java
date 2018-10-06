@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -17,6 +18,7 @@ public class Sala implements Serializable {
 	private Long id;
 	private String nome;
 	@OneToMany
+	@JoinColumn(name="id")
 	private List<DataDisponivel> dataDisponiveis;
 	
 	public Sala() {}

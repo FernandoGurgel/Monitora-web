@@ -17,8 +17,10 @@ public class AlunoController {
 	private AlunoRepository ar;
 
 	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.GET)
-	public String cadastra() {
-		return "c/cadastrarAluno";
+	public ModelAndView cadastra() {
+		ModelAndView view = new ModelAndView("c/cadastrarAluno");
+		view.addObject("Titulo", "Cadastra Aluno");
+		return view;
 	}
 	
 	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.GET)
@@ -26,11 +28,14 @@ public class AlunoController {
 		ModelAndView view = new ModelAndView("c/cadastrarAluno");
 		Aluno aluno = ar.findById(id);
 		view.addObject("aluno", aluno);
+		view.addObject("Titulo", "Editar Aluno");
 		return view;
 	}
 
 	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.POST)
-	public String editar(Aluno aluno) {
+	public String editar(Aluno aluno,int tipo) {
+		aluno.setTipoaluno((tipo == 1 ? ETipo.Aluno : ETipo.Monitor));
+		ar.save(aluno);
 		return "redirect:/coordenador/aluno";
 	}
 	
