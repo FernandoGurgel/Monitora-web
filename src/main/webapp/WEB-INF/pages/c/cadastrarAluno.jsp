@@ -10,74 +10,78 @@
 
 			<h2>${Titulo }</h2>
 
-			<form 
-				method="post">
+			<form method="post">
 				<fieldset>
 
 					<input type="hidden" name="id" value="${aluno.id}" />
 
 					<!-- TEXTO-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="idNome">Nome</label>
-						<div class="col-md-5">
+						<label class="col control-label" for="idNome">Nome</label>
+						<div class="col">
 							<input id="idNome" name="nome" type="text"
 								placeholder="Nome do usuário" class="form-control input-md"
 								required value="${aluno.nome}">
 
 						</div>
 					</div>
+					<div class="form-row">
 
-					<!-- TEXTO-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idDepto">Matricula</label>
-						<div class="col-md-5">
-							<input id="idMatricula" name="matricula" type="text"
-								placeholder="Número de Matriucula" class="form-control input-md"
-								value="${aluno.matricula}" required>
+						<!-- TEXTO-->
+						<div class="form-group col">
+							<label class="col control-label" for="idDepto">Matricula</label>
+							<div class="col">
+								<input id="idMatricula" name="matricula" type="text"
+									placeholder="Número de Matriucula"
+									class="form-control input-md" value="${aluno.matricula}"
+									required>
 
+							</div>
+						</div>
+
+						<!-- TEXTO-->
+						<div class="form-group col">
+							<label class="col control-label" for="idUsuario">Curso</label>
+							<div class="col">
+								<input id="idCurso" name="curso" type="text"
+									placeholder="Nome do Curso" class="form-control input-md"
+									value="${aluno.curso}" required>
+
+							</div>
 						</div>
 					</div>
 
 					<!-- TEXTO-->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="idUsuario">Curso</label>
-						<div class="col-md-5">
-							<input id="idCurso" name="curso" type="text"
-								placeholder="Nome do Curso" class="form-control input-md"
-								value="${aluno.curso}" required>
-
-						</div>
-					</div>
-
-					<!-- TEXTO-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idUsuario">E-mail</label>
-						<div class="col-md-5">
+						<label class="col control-label" for="idUsuario">E-mail</label>
+						<div class="col">
 							<input id="idEmail" name="email" type="text" placeholder="Email"
 								class="form-control input-md" value="${aluno.email}" required>
 
 						</div>
 					</div>
+					<div class="form-row">
 
-					<!-- TEXTO SENHA-->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idSenha">Senha</label>
-						<div class="col-md-5">
-							<input id="idSenha" name="senha" type="password"
-								placeholder="Digite a senha" class="form-control input-md"
-								value="${aluno.senha}" required>
+						<!-- TEXTO SENHA-->
+						<div class="form-group col">
+							<label class="col control-label" for="idSenha">Senha</label>
+							<div class="col">
+								<input id="idSenha" name="senha" type="password"
+									placeholder="Digite a senha" class="form-control input-md"
+									value="${aluno.senha}" required>
 
+							</div>
 						</div>
-					</div>
 
-					<!-- DropDown (ComboBOX) -->
-					<div class="form-group">
-						<label class="col-md-4 control-label" for="idTipo">Nível</label>
-						<div class="col-md-4 row-md-10">
-							<select id="idTipo" name="tipo" class="form-control">
-								<option value="1">Aluno</option>
-								<option value="2">Monitor</option>
-							</select>
+						<!-- DropDown (ComboBOX) -->
+						<div class="form-group col">
+							<label class="col control-label" for="idTipo">Nível</label>
+							<div class="col row-md-10">
+								<select id="idTipo" name="tipo" class="form-control">
+									<option value="1">Aluno</option>
+									<option value="2">Monitor</option>
+								</select>
+							</div>
 						</div>
 					</div>
 

@@ -1,6 +1,7 @@
 package br.ifam.monitoriaweb.bean;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Disciplina implements Serializable {
@@ -22,6 +25,10 @@ public class Disciplina implements Serializable {
 	@OneToOne(optional=false)
 	@JoinColumn(name="aluno_id")
 	private Aluno aluno;
+	@Temporal(TemporalType.DATE)
+	private Calendar dataInicio;
+	@Temporal(TemporalType.DATE)
+	private Calendar dataFim;
 	
 	public Disciplina() {}
 	
@@ -32,7 +39,22 @@ public class Disciplina implements Serializable {
 		this.qtdVagas = qtdVagas;
 	}
 	
-	
+	public Calendar getDataInicio() {
+		return dataInicio;
+	}
+
+	public void setDataInicio(Calendar dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+	public Calendar getDataFim() {
+		return dataFim;
+	}
+
+	public void setDataFim(Calendar dataFim) {
+		this.dataFim = dataFim;
+	}
+
 	public Aluno getAluno() {
 		return aluno;
 	}

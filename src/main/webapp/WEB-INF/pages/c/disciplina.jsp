@@ -58,7 +58,7 @@
 								<th scope="row">${dis.id}</th>
 								<td>${dis.nome}</td>
 								<td>${dis.informacoes}</td>
-								<td>teste</td>
+								<td>${dis.aluno.nome }</td>
 								<td>${dis.qtdVagas}</td>
 								<td><a class="btn btn-primary" title="Editar"
 									href="/disciplina/editar?id=${l.id}" role="button"><i

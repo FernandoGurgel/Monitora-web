@@ -19,7 +19,10 @@ and open the template in the editor.
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/static/css/estilo.css" />" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/static/css/jquery-ui.css" />" />
 <script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery-ui.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">

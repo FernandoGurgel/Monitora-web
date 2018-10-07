@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.ifam.monitoriaweb.bean.Aluno;
 import br.ifam.monitoriaweb.bean.Disciplina;
+import br.ifam.monitoriaweb.repository.AlunoRepository;
 import br.ifam.monitoriaweb.repository.DisciplinaRepository;
 
 @Controller
@@ -13,6 +15,8 @@ public class DisciplinaController {
 
 	@Autowired
 	private DisciplinaRepository em;
+	@Autowired
+	private AlunoRepository al;	
 	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.GET)
 	public String index() {
@@ -20,7 +24,10 @@ public class DisciplinaController {
 	}
 	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.POST)
-	public String cadastrar(Disciplina disciplina) {
+	public String cadastrar(Disciplina disciplina, String nomeAluno) {
+		Aluno bean = al.findByNome(nomeAluno);
+		System.out.println(bean.getId());
+		disciplina.setAluno(bean);
 		em.save(disciplina);
 		return "redirect:/coordenador/disciplina";
 	}

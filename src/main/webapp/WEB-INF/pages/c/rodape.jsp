@@ -5,7 +5,5 @@
 
 <script src="/static/js/bootstrap.js"></script>
 <script src="/static/js/fontawesome-all.js"></script>
-<script src="/static/js/monitoria.js"></script>
-
 </body>
 </html>

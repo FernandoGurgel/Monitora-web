@@ -7,4 +7,6 @@ import br.ifam.monitoriaweb.bean.Aluno;
 public interface AlunoRepository extends CrudRepository<Aluno, String>{
 
 	Aluno findById(Long id);
+
+	Aluno findByNome(String nome);
 }
