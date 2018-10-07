@@ -9,6 +9,9 @@ and open the template in the editor.
 */
 
 
+body{
+    height: -webkit-fill-available;
+}
 
 #botaoSalvarLoginCoordenador{
   margin-left:740px; 

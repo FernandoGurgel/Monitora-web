@@ -2,20 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="menu.jsp"></jsp:include>
 
-
 <br>
-<!--fim topo-->
 
-<!------FORMULARIO---------->
-
-<!-- TITULO DO FORMULARIO -->
 <div class="container">
 	<div class="row justify-content-md-center">
 		<div class="col-12">
 
 			<h2>${Titulo }</h2>
 
-			<form id=formulariocadastroaluno class="form-horizontal"
+			<form 
 				method="post">
 				<fieldset>
 

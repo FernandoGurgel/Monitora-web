@@ -4,24 +4,33 @@
 
 <br>
 
-
-<!--Fim Topo-->
-
-
-<!--Table-->
-
 <div class="container">
-	<div class="row justify-content-end">
-		<div class="col-4 ">
-			<input class="form-control" type="search" size="50"
-				placeholder="Pesquisar por aluno ou matricula" aria-label="Search"
-				autofocus maxlength="120">
-		</div>
-		<div class="col-2 my-2">
-			<a class="btn btn-sm btn-outline-secondary" href="/aluno/cadastrar">Novo
-				Aluno</a>
+	<div class="row">
+		<div class="col-12">
+			<h3>Lista Aluno</h3>
+
+			<div class="row justify-content-end align-items-center">
+				<div class="col-4 ">
+					<form class="input-group" action="/aluno/pesquisar" method="get">
+					
+					<input type="text" class="form-control"
+						placeholder="Pesquisar por nome" name="pesquisa">
+					<div class="input-group-append">
+						<button title="Perquisar" class="btn btn-outline-secondary" type="submit" > 
+						<i class="fas fa-search"></i></button>
+					</div>
+					</form>
+				</div>
+				<div class="col-2 my-2 ">
+					<a class="btn btn-sm btn-outline-secondary"
+						href="/aluno/cadastrar"><i class="fas fa-plus"></i> Nova
+						Aluno</a>
+				</div>
+			</div>
+
 		</div>
 	</div>
+	<br/>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="span10 offset1">

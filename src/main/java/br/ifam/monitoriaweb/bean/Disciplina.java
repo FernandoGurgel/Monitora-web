@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Disciplina implements Serializable {
@@ -17,6 +19,9 @@ public class Disciplina implements Serializable {
 	private String nome;
 	private String informacoes;
 	private int qtdVagas;
+	@OneToOne(optional=false)
+	@JoinColumn(name="aluno_id")
+	private Aluno aluno;
 	
 	public Disciplina() {}
 	
@@ -26,6 +31,16 @@ public class Disciplina implements Serializable {
 		this.informacoes = informacoes;
 		this.qtdVagas = qtdVagas;
 	}
+	
+	
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
 	public Long getId() {
 		return id;
 	}
