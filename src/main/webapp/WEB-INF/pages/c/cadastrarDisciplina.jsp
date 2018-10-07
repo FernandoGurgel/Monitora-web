@@ -50,11 +50,11 @@
 					</div>
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Data Inicio</label>
-						<input type="date" class="form-control" name="dataInicio" min="2018-01-01" required >
+						<input type="date" class="form-control" name="dataInicio" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required >
 					</div>
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Data Fim</label>
-						<input type="date" class="form-control" name="dataFim" min="2018-01-01" required>
+						<input type="date" class="form-control" name="dataFim" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required>
 					</div>
 					
 				</div>

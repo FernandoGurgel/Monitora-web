@@ -1,8 +1,9 @@
 package br.ifam.monitoriaweb.bean;
 
 import java.io.Serializable;
-import java.util.Calendar;
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,9 +27,9 @@ public class Disciplina implements Serializable {
 	@JoinColumn(name="aluno_id")
 	private Aluno aluno;
 	@Temporal(TemporalType.DATE)
-	private Calendar dataInicio;
+	private Date dataInicio;
 	@Temporal(TemporalType.DATE)
-	private Calendar dataFim;
+	private Date dataFim;
 	
 	public Disciplina() {}
 	
@@ -39,20 +40,32 @@ public class Disciplina implements Serializable {
 		this.qtdVagas = qtdVagas;
 	}
 	
-	public Calendar getDataInicio() {
+	public Date getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(Calendar dataInicio) {
-		this.dataInicio = dataInicio;
+	public void setDataInicio(String dataInicio) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			this.dataInicio = format.parse(dataInicio);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public Calendar getDataFim() {
+	public Date getDataFim() {
 		return dataFim;
 	}
 
-	public void setDataFim(Calendar dataFim) {
-		this.dataFim = dataFim;
+	public void setDataFim(String dataFim) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			this.dataFim = format.parse(dataFim);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public Aluno getAluno() {
