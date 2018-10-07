@@ -1,5 +1,10 @@
 package br.ifam.monitoriaweb.contreller;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +31,9 @@ public class DisciplinaController {
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.POST)
 	public String cadastrar(Disciplina disciplina, String nomeAluno) {
 		Aluno bean = al.findByNome(nomeAluno);
-		System.out.println(bean.getId());
 		disciplina.setAluno(bean);
+//		disciplina.setDataFim(fim);
+//		disciplina.setDataInicio(inicio);
 		em.save(disciplina);
 		return "redirect:/coordenador/disciplina";
 	}
