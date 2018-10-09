@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.ifam.monitoriaweb.bean.Aluno;
 import br.ifam.monitoriaweb.bean.Disciplina;
@@ -24,24 +25,37 @@ public class DisciplinaController {
 	private AlunoRepository al;	
 	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.GET)
-	public String index() {
-		return "c/cadastrarDisciplina";
+	public ModelAndView index() {
+		ModelAndView view = new ModelAndView("c/cadastrarDisciplina");
+		view.addObject("titulo", "Editar Disciplina");
+		return view;
 	}
 	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.POST)
 	public String cadastrar(Disciplina disciplina, String nomeAluno) {
 		Aluno bean = al.findByNome(nomeAluno);
 		disciplina.setAluno(bean);
-//		disciplina.setDataFim(fim);
-//		disciplina.setDataInicio(inicio);
 		em.save(disciplina);
 		return "redirect:/coordenador/disciplina";
 	}
 	
-	@RequestMapping("/disciplina/editar")
-	public String editar(long id) {
-		return "c/cadastrarDisciplina";
+	@RequestMapping(value="/disciplina/editar", method = RequestMethod.GET)
+	public ModelAndView editar(long id) {
+		ModelAndView view = new ModelAndView("c/cadastrarDisciplina");
+		Disciplina a = em.findById(id);
+		view.addObject("disciplina", a);
+		view.addObject("titulo", "Editar Disciplina");
+		return view;
 	}
+	
+	@RequestMapping(value="/disciplina/editar", method= RequestMethod.POST)
+	public String editar(Disciplina disciplina, String nomeAluno) {
+		Aluno bean = al.findByNome(nomeAluno);
+		disciplina.setAluno(bean);
+		em.save(disciplina);
+		return "redirect:/coordenador/disciplina";
+	}
+	
 	
 	@RequestMapping("/disciplina/excluir")
 	public String excluir(long id) {

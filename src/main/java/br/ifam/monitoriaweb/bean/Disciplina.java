@@ -40,8 +40,8 @@ public class Disciplina implements Serializable {
 		this.qtdVagas = qtdVagas;
 	}
 	
-	public Date getDataInicio() {
-		return dataInicio;
+	public String getDataInicio() {
+		return dataInicio.toLocaleString().substring(0, 10);
 	}
 
 	public void setDataInicio(String dataInicio) {
@@ -54,8 +54,8 @@ public class Disciplina implements Serializable {
 		}
 	}
 
-	public Date getDataFim() {
-		return dataFim;
+	public String getDataFim() {
+		return dataFim.toLocaleString().substring(0, 10);
 	}
 
 	public void setDataFim(String dataFim) {

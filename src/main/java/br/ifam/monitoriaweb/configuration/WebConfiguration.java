@@ -13,10 +13,5 @@ public class WebConfiguration {
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}
-	@Bean
-	public InternalResourceViewResolver statics() {
-		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-		resolver.setPrefix("/WEB-INF/static");
-		return resolver;
-	}
+	
 }
