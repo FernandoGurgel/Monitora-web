@@ -6,4 +6,6 @@ import br.ifam.monitoriaweb.bean.Sala;
 
 public interface SalaRepository extends CrudRepository<Sala, String>{
 
+	Sala findBycodsala(long codsala);
+
 }

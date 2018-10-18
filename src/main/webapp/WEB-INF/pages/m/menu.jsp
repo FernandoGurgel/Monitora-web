@@ -14,18 +14,19 @@ and open the template in the editor.
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
-	href="<c:url value="/static/css/bootstrap.min.css" />">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/static/css/estilo.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/static/css/jquery-ui.css" />" />
 <script src="/static/js/jquery.js"></script>
 <script src="/static/js/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value="/static/css/estilo.css" />" />
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/coordenador/">DevOps</a>
+		<a class="navbar-brand" href="/monitor/">DevOps</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +35,7 @@ and open the template in the editor.
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
-					href="/coordenador/">Inicio <span class="sr-only">(current)</span></a>
+					href="/monitor/">Inicio <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>
@@ -45,9 +46,7 @@ and open the template in the editor.
 				aria-haspopup="true" aria-expanded="false"> Menu </a>
 				<div class="dropdown-menu dropdown-menu-right "
 					aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="/coordenador/aluno">Aluno</a> <a
-						class="dropdown-item" href="/coordenador/disciplina">Disciplina</a>
-					<a class="dropdown-item" href="/coordenador/sala">Sala</a>
+					<a class="dropdown-item" href="/monitor/">Meus Horário</a> 
 				</div></li>
 		</ul>
 		<a href="/">

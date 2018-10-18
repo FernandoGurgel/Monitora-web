@@ -7,61 +7,61 @@ and open the template in the editor.
     Created on : 28/09/2018, 15:36:11
     Author     : carlos maciel
 */
-
-
-body{
-    height: -webkit-fill-available;
+#addDia {
+	text-align: center !important;
+	margin-bottom: 0px !important;
+	margin-top: 30px !important;
 }
 
-#botaoSalvarLoginCoordenador{
-  margin-left:740px; 
+body {
+	height: -webkit-fill-available;
 }
 
-#formularioLoginCoordenador{
-    margin-top:40px;
-     margin-left:400px;
+#botaoSalvarLoginCoordenador {
+	margin-left: 740px;
 }
 
-
-
-#botaoSair{
-    margin-left:950px; 
+#formularioLoginCoordenador {
+	margin-top: 40px;
+	margin-left: 400px;
 }
 
-#FormularioCadastroDisciplina{
-     margin-left:500px;
+#botaoSair {
+	margin-left: 950px;
 }
 
-#botaoSalvarCadastrarDisciplina{
-    margin-left: 500px;
+#FormularioCadastroDisciplina {
+	margin-left: 500px;
 }
 
-#TituloEditarDisciplina{
-      margin-left:50px;
-        
+#botaoSalvarCadastrarDisciplina {
+	margin-left: 500px;
 }
 
-#botaoSalvarEditarDisciplina{
-    margin-left: 500px;
+#TituloEditarDisciplina {
+	margin-left: 50px;
 }
 
-
-#formulariocadastroaluno{
-    margin-left: 100px;
+#botaoSalvarEditarDisciplina {
+	margin-left: 500px;
 }
 
-#formularioeditaraluno{
-     margin-left: 100px;
+#formulariocadastroaluno {
+	margin-left: 100px;
 }
 
-#FormularioComboBoxCadastroSala{
-     margin-left:150px;
+#formularioeditaraluno {
+	margin-left: 100px;
 }
 
-#FormularioCadastroSala{
-     margin-left:150px;
+#FormularioComboBoxCadastroSala {
+	margin-left: 150px;
 }
 
-#botaoSalvarCadastrarSala{
-    margin-left: 150px;
+#FormularioCadastroSala {
+	margin-left: 150px;
+}
+
+#botaoSalvarCadastrarSala {
+	margin-left: 150px;
 }

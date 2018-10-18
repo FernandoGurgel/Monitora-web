@@ -4,9 +4,13 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 public class Sala implements Serializable {
@@ -14,28 +18,29 @@ public class Sala implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue
-	private Long id;
+	@GeneratedValue (strategy = GenerationType.AUTO)
+	private Long codsala;
 	private String nome;
 	@OneToMany
-	@JoinColumn(name="id")
+	@JoinColumn(name="codsala")
 	private List<DataDisponivel> dataDisponiveis;
 	
 	public Sala() {}
 	
-	public Sala(Long id, String nome, List<DataDisponivel> dataDisponiveis) {
-		this.id = id;
+	public Sala( String nome, List<DataDisponivel> dataDisponiveis) {
+		
 		this.nome = nome;
 		this.dataDisponiveis = dataDisponiveis;
 	}
 
+	public Long getCodsala() {
+		return codsala;
+	}
 
-	public Long getId() {
-		return id;
+	public void setCodsala(Long codsala) {
+		this.codsala = codsala;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getNome() {
 		return nome;
 	}

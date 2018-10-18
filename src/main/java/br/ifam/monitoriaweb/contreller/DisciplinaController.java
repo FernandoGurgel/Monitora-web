@@ -27,7 +27,7 @@ public class DisciplinaController {
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView view = new ModelAndView("c/cadastrarDisciplina");
-		view.addObject("titulo", "Editar Disciplina");
+		view.addObject("titulo", "Cadastrar Disciplina");
 		return view;
 	}
 	

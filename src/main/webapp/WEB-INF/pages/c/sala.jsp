@@ -29,39 +29,30 @@
 	</div>
 	<br />
 	<div class="row">
-		<div class="col-12 span10 offset1">
-			<table class="table table-hover table-fixed ">
+		<div class="col-12 ">
+			<table class="table table-hover">
 
 				<!--Table head-->
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>Nome</th>
-						<th>Açoes</th>
+						<th scope="col">ID</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Açoes</th>
 					</tr>
 				</thead>
-				<!--Table head-->
-
-				<!--Table body-->
 				<tbody>
 					<c:forEach var="sal" items="${lista }">
-
 						<tr>
-							<th scope="row">${ sal.id}</th>
+							<th scope="row">${ sal.codsala}</th>
 							<td>${sal.nome }</td>
 							<td><a class="btn btn-primary"
-								href="/sala/Editar?id=${sal.id}" role="button"><i
+								href="/sala/Editar?id=${sal.codsala}" role="button"><i
 									class="far fa-calendar-alt"></i></a> <a role="button"
-								class="btn btn-danger" href="/sala/excluir?id=${sal.id }">Excluir
-									</button>
+								class="btn btn-danger" href="/sala/excluir?codsala=${sal.codsala }">Excluir
+									</a></td>
 						</tr>
 					</c:forEach>
-
-
-
 				</tbody>
-				<!--Table body-->
-
 			</table>
 		</div>
 	</div>

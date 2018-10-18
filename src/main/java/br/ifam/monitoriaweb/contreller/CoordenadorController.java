@@ -9,8 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.ifam.monitoriaweb.bean.Aluno;
 import br.ifam.monitoriaweb.bean.Disciplina;
+import br.ifam.monitoriaweb.bean.Sala;
 import br.ifam.monitoriaweb.repository.AlunoRepository;
 import br.ifam.monitoriaweb.repository.DisciplinaRepository;
+import br.ifam.monitoriaweb.repository.SalaRepository;
 
 @Controller
 @RequestMapping("/coordenador")
@@ -20,6 +22,8 @@ public class CoordenadorController {
 	private AlunoRepository al;
 	@Autowired
 	private DisciplinaRepository ds;
+	@Autowired
+	private SalaRepository sl;
 	
 	@RequestMapping("/")
 	public String index() {
@@ -43,7 +47,10 @@ public class CoordenadorController {
 	}
 	
 	@RequestMapping("/sala")
-	public String sala() {
-		return "c/sala";
+	public ModelAndView sala() {
+		ModelAndView view = new ModelAndView("c/sala");
+		Iterable<Sala> iterable = sl.findAll();
+		view.addObject("lista", iterable);
+		return view;
 	}
 }

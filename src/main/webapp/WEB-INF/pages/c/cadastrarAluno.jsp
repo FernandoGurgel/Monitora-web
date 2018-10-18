@@ -55,7 +55,7 @@
 					<div class="form-group">
 						<label class="col control-label" for="idUsuario">E-mail</label>
 						<div class="col">
-							<input id="idEmail" name="email" type="text" placeholder="Email"
+							<input id="idEmail" name="email" type="email" placeholder="Email"
 								class="form-control input-md" value="${aluno.email}" required>
 
 						</div>
