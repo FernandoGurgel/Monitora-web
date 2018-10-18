@@ -11,6 +11,7 @@ import br.ifam.monitoriaweb.bean.Aluno;
 import br.ifam.monitoriaweb.bean.Disciplina;
 import br.ifam.monitoriaweb.bean.Sala;
 import br.ifam.monitoriaweb.repository.AlunoRepository;
+import br.ifam.monitoriaweb.repository.DataDisponivelRepository;
 import br.ifam.monitoriaweb.repository.DisciplinaRepository;
 import br.ifam.monitoriaweb.repository.SalaRepository;
 
@@ -24,6 +25,8 @@ public class CoordenadorController {
 	private DisciplinaRepository ds;
 	@Autowired
 	private SalaRepository sl;
+	@Autowired
+	private DataDisponivelRepository dd;
 	
 	@RequestMapping("/")
 	public String index() {

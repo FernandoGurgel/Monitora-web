@@ -37,6 +37,7 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Nome</th>
+						<th scope="col">Horários</th>
 						<th scope="col">Açoes</th>
 					</tr>
 				</thead>
@@ -45,10 +46,16 @@
 						<tr>
 							<th scope="row">${ sal.codsala}</th>
 							<td>${sal.nome }</td>
+							<td>
+								<c:forEach var="semana" items="${sal.dataDisponiveis }">
+									${semana.dia } - ${semana.inicio } - ${semana.fim }<br>
+								</c:forEach>
+							</td>
 							<td><a class="btn btn-primary"
-								href="/sala/Editar?id=${sal.codsala}" role="button"><i
+								href="/sala/Editar?id=${sal.codsala}" role="button" title="Detalhe"><i
 									class="far fa-calendar-alt"></i></a> <a role="button"
-								class="btn btn-danger" href="/sala/excluir?codsala=${sal.codsala }">Excluir
+								class="btn btn-danger" href="/sala/excluir?codsala=${sal.codsala }" title="Excluir"><i
+										class="far fa-trash-alt"></i>
 									</a></td>
 						</tr>
 					</c:forEach>

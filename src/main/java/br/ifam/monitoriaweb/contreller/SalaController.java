@@ -37,6 +37,8 @@ public class SalaController {
 	
 	@RequestMapping(value="/sala/cadastrar", method=RequestMethod.POST)
 	public String cadastrar(Sala sala) {
+		data.saveAll(horario);
+		sala.setDataDisponiveis(horario);
 		sr.save(sala);
 		return "redirect:/coordenador/sala";
 	}
@@ -44,6 +46,7 @@ public class SalaController {
 	@RequestMapping("/sala/excluir")
 	public String excluir(long codsala) {
 		Sala sala = sr.findBycodsala(codsala);
+		data.deleteAll(sala.getDataDisponiveis());
 		sr.delete(sala);
 		return "redirect:/coordenador/sala";
 	}
@@ -51,7 +54,7 @@ public class SalaController {
 	@RequestMapping(value="/sala/addHoraio", method=RequestMethod.POST)
 	@ResponseBody
 	public String addHorario(DataDisponivel bean) {
-		horario.add(data.save(bean));
+		horario.add(bean);
 		System.out.println(horario);
 		return "{'success'}";
 	}
@@ -67,7 +70,6 @@ public class SalaController {
 	public String horarioRemovido(int id) {
 		for(DataDisponivel x: horario) {
 			if(x.getId() == id) {
-				data.delete(x);
 				horario.remove(x);
 				return "{sucess}";
 			}

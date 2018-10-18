@@ -1,26 +1,19 @@
 package br.ifam.monitoriaweb.contreller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import br.ifam.monitoriaweb.bean.Aluno;
-import br.ifam.monitoriaweb.bean.Disciplina;
 import br.ifam.monitoriaweb.bean.Sala;
-import br.ifam.monitoriaweb.repository.AlunoRepository;
-import br.ifam.monitoriaweb.repository.DisciplinaRepository;
-import br.ifam.monitoriaweb.repository.MonitorRepository;
+import br.ifam.monitoriaweb.repository.ReservaRepository;
 import br.ifam.monitoriaweb.repository.SalaRepository;
 
 @Controller
 @RequestMapping("/monitor")
 public class MonitorController {
 
-	//@Autowired
-	private MonitorRepository mo;
+	@Autowired
+	private ReservaRepository rr;
 	
 	@Autowired
 	private SalaRepository sala;
