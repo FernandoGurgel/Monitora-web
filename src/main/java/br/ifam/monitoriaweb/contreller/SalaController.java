@@ -34,6 +34,26 @@ public class SalaController {
 		view.addObject("titulo", "Cadastrar Sala");
 		return view;
 	}
+
+	@RequestMapping(value="/sala/Editar", method=RequestMethod.GET)
+	public ModelAndView editar(long id) {
+		horario = new ArrayList<DataDisponivel>();
+		ModelAndView view = new ModelAndView("c/cadastrarSala");
+		Sala sala = sr.findBycodsala(id);
+		horario = sala.getDataDisponiveis();
+		System.out.println(horario.size());
+		view.addObject("titulo", "Editar Sala");
+		view.addObject("sala", sala);
+		return view;
+	}
+	
+	@RequestMapping(value="/sala/editar", method=RequestMethod.POST)
+	public String editar(Sala sala) {
+		data.saveAll(horario);
+		sala.setDataDisponiveis(horario);
+		sr.save(sala);
+		return "redirect:/coordenador/sala";
+	}
 	
 	@RequestMapping(value="/sala/cadastrar", method=RequestMethod.POST)
 	public String cadastrar(Sala sala) {
