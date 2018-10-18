@@ -55,8 +55,7 @@
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Data Fim</label>
 						<input type="date" class="form-control" name="dataFim" value="${disciplina.dataFim}" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required>
-					</div>
-					
+					</div>					
 				</div>
 				<button class="btn btn-primary" type="submit">Cadastrar</button>
 				<a class="btn btn-danger" href="/coordenador/" role="button">Cancelar</a>

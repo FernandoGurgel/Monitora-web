@@ -35,6 +35,8 @@ public class DisciplinaController {
 	public String cadastrar(Disciplina disciplina, String nomeAluno) {
 		Aluno bean = al.findByNome(nomeAluno);
 		disciplina.setAluno(bean);
+//		disciplina.setDataFim(fim);
+//		disciplina.setDataInicio(inicio);
 		em.save(disciplina);
 		return "redirect:/coordenador/disciplina";
 	}
