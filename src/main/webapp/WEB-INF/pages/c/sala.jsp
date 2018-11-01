@@ -23,10 +23,6 @@
 					<a class="btn btn-sm btn-outline-secondary" href="/sala/addSala"><i
 						class="fas fa-plus"></i> Nova Sala</a>
 				</div>
-				<div class="col-2 my-2 ">
-					<a class="btn btn-sm btn-outline-secondary" href="/sala/addHorario"><i
-						class="fas fa-plus"></i> Cadastrar Horário</a>
-				</div>
 			</div>
 
 		</div>
@@ -41,6 +37,8 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Nome</th>
+						<th></th>
+						<th></th>
 						<th scope="col">Açoes</th>
 					</tr>
 				</thead>
@@ -49,9 +47,16 @@
 						<tr>
 							<th scope="row">${ sal.codsala}</th>
 							<td>${sal.nome }</td>
-							<td><a class="btn btn-primary"
-								href="/sala/Editar?id=${sal.codsala}" role="button" title="Detalhe"><i
-									class="far fa-calendar-alt"></i></a> <a role="button"
+							<td></td>
+							<td></td>
+							<td>
+								<a class="btn btn-success" role="button" href="/sala/addHorario?codsala=${sal.codsala }" title="Cadastrar Horário">
+									<i class="far fa-calendar-plus"></i>
+								</a>
+								<a class="btn btn-primary" role="button"
+									href="/sala/Editar?codsala=${sal.codsala}" title="Detalhe"><i
+									class="far fa-calendar-alt"></i></a> 
+								<a role="button"
 								class="btn btn-danger" href="/sala/excluir?codsala=${sal.codsala }" title="Excluir"><i
 										class="far fa-trash-alt"></i>
 									</a></td>
