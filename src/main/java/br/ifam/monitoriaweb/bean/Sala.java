@@ -21,16 +21,11 @@ public class Sala implements Serializable {
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private Long codsala;
 	private String nome;
-	@OneToMany
-	@JoinColumn(name="codsala")
-	private List<DataDisponivel> dataDisponiveis;
 	
 	public Sala() {}
 	
-	public Sala( String nome, List<DataDisponivel> dataDisponiveis) {
-		
+	public Sala( String nome) {
 		this.nome = nome;
-		this.dataDisponiveis = dataDisponiveis;
 	}
 
 	public Long getCodsala() {
@@ -46,11 +41,5 @@ public class Sala implements Serializable {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public List<DataDisponivel> getDataDisponiveis() {
-		return dataDisponiveis;
-	}
-	public void setDataDisponiveis(List<DataDisponivel> dataDisponiveis) {
-		this.dataDisponiveis = dataDisponiveis;
 	}
 }
