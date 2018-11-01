@@ -37,6 +37,8 @@
 					<tr>
 						<th scope="col">ID</th>
 						<th scope="col">Nome</th>
+						<th></th>
+						<th></th>
 						<th scope="col">Açoes</th>
 					</tr>
 				</thead>
@@ -45,6 +47,7 @@
 						<tr>
 							<th scope="row">${ sal.codsala}</th>
 							<td>${sal.nome }</td>
+							<td></td>
 							<td></td>
 							<td>
 								<a class="btn btn-success" role="button" href="/sala/addHorario?codsala=${sal.codsala }" title="Cadastrar Horário">
