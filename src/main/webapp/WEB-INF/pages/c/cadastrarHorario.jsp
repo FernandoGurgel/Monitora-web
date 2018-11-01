@@ -10,10 +10,19 @@
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<form class="form-horizontal" method="post" action="/sala/salvar">
+			<form class="form-horizontal" method="post">
 				<div class="form-group">
+				
 					<label for="nomeSala">Sala:</label> 
-					<input class="form-control col" name="codsala" value="${sala.nome}"  disabled/> 
+						<select class="form-control col" name="codsala"
+							id="nomeSala" required>
+	
+								<c:forEach var="sal" items="${lista}">
+										<option value="${sal.codsala}">${sal.nome}</option>
+								</c:forEach>
+							
+						</select>
+					
 				</div>
 
 				<div class="form-row">
@@ -101,7 +110,7 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th col="col"></th>
+								<th col="col">cod.</th>
 								<th col="col">Semana</th>
 								<th col="col">Hora inicio</th>
 								<th col="col">Hora fim</th>

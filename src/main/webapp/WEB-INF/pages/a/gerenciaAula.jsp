@@ -11,7 +11,7 @@
 				
 				<div class="col-3 my-4 ">
 					<a class="btn btn-success"
-                                           href="alunoCadastraMonitoria"><i class="fas fa-plus"></i> Inscrever Monitoria
+                                           href="cadastraMonitoria"><i class="fas fa-plus"></i> Inscrever Monitoria
 						</a>
                                   
 				</div>
@@ -41,7 +41,7 @@
       <th>Ações</th>
     </tr>
   </thead>
-  <!--Table head-->
+			<!--Table head-->
 
   <!--Table body-->
   <tbody>

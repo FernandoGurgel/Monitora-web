@@ -8,7 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
 import br.ifam.monitoriaweb.bean.DataDisponivel;
 import br.ifam.monitoriaweb.bean.Sala;
 import br.ifam.monitoriaweb.repository.DataDisponivelRepository;
@@ -19,50 +21,32 @@ public class SalaController {
 	
 
 	private List<DataDisponivel> horario;
-	private Sala ob = null;
-	
 	@Autowired
 	private SalaRepository sr;
 	@Autowired
 	private DataDisponivelRepository data;
-	
-	@RequestMapping(value="/sala/Editar",method=RequestMethod.GET)
-	public ModelAndView editarHorario(long codsala) {
-		ModelAndView view = new ModelAndView("c/cadastrarHorario");
-		view.addObject("titulo", "Editar Horário");
-		Sala sala = sr.findBycodsala(codsala);
-		List<DataDisponivel> listaHorario = data.findBySala(sala); 
-		view.addObject("horario", listaHorario);
-		return view;
-	}
-	
-	
 	@RequestMapping(value="/sala/addHorario", method=RequestMethod.GET)
-	public ModelAndView cadastrar(long codsala) {
-		horario = new ArrayList<DataDisponivel>();
-		Sala sala = sr.findBycodsala(codsala);
-		ob = sala;
+	public ModelAndView cadastrar() {
+		horario = new ArrayList<DataDisponivel>();		
+		
 		ModelAndView view = new ModelAndView("c/cadastrarHorario");
 		view.addObject("titulo", "Cadastrar Horário");
-		view.addObject("sala", sala);
+		Iterable<Sala> iterable = sr.findAll();
+		view.addObject("lista", iterable);
 		return view;
 	}
 	
-	@RequestMapping(value="/sala/salvar",method=RequestMethod.POST)
-	public String salvar() {
-		data.saveAll(horario);
-		return "redirect:/coordenador/sala";
-	}
 	
 	@RequestMapping(value="/sala/addHorario", method=RequestMethod.POST)
 	@ResponseBody
-	public String sala(DataDisponivel bean) {
-		if(ob != null) {			
-			bean.setSala(ob);
-			horario.add(bean);
-		}
+	public String cadastrar(DataDisponivel bean) {
+		horario.add(bean);
+		System.out.println(horario);
 		return "{'success'}";
-	}
+	}		
+	
+	
+	
 	
 	@RequestMapping(value="/sala/addSala", method=RequestMethod.GET)
 	public ModelAndView addSala() {

@@ -35,11 +35,8 @@
 					    <tr>
 					      <th>Horário Inicio</th>
 					      <th>Horário Fim</th>
-					      <th>Segunda - Feira </th>
-					      <th>Terça - Feira</th>
-					      <th>Quarta - Feira</th>
-					      <th>Quinta - Feira</th>
-					      <th>Sexta - Feira</th>
+					      <th>Dia</th>
+					      <th>Sala</th>
 					      <th>Ações</th>
 					    </tr>
 					  </thead>
@@ -50,11 +47,8 @@
 					    <tr>
 					      <th scope="row">13:00</th>
 					      <th>14:59</th>
-					      <th>  </th>
-					       <th>  </th>
+					      <th> </th>
 					        <th> Sala 5  </th>
-					         <th>  </th>
-					          <th>  </th>
 					      <td> <button type="button" class="btn btn-danger">Excluir</button>
 					    </tr>
 					

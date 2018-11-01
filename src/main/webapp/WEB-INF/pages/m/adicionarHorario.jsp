@@ -9,6 +9,7 @@
 		<div class="col-12">
 
 		<h1 class="display-4" id="tituloGerenciarMonitoria">Gerencia Monitoria </h1>
+		
          <br>
          <br>
          
@@ -24,7 +25,7 @@
 				  <thead>
 				    <tr>
 				      <th>ID</th>
-				      <th>Nome</th>
+				      <th>Sala</th>
 				      <th>Dia da Semana</th>
 				      <th>Horário Inicio</th>
 				      <th>Horário Fim</th>
@@ -35,35 +36,18 @@
 				
 				  <!--Table body-->
 				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Laboratório 5</td>
-				      <td>SEXTA-FEIRA</td>
-				      <td>14:00</td>
-				      <td>15:59</td>
-				      <td><input class="btn btn-primary" type="submit" value="Selecionar"> 
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Laboratório 5</td>
-				      <td>TERÇA-FEIRA</td>
-				      <td>16:00</td>
-				      <td>17:59</td>      
-				 
-				      
-				      <td><input class="btn btn-primary" type="submit" value="Selecionar"> 
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th> 
-				      <td>Laboratório 7</td>
-				      <td>QUINTA-FEIRA</td>
-				      <td>15:00</td>
-				      <td>16:59</td>
-				   
-				      <td><input class="btn btn-primary" type="submit" value="Selecionar"> 
-				    </tr>
-				    
-				   
+				    <m:forEach var="datadisp" items="${lista}">
+				    	<tr>
+						      <th scope="row">${datadisp.id}</th>
+						      <td>-</td>
+						      <td>${datadisp.dia}</td>
+						      <td>${datadisp.inicio}</td>
+						      <td>${datadisp.fim}</td>	
+						      <td><input class="btn btn-primary" type="submit" value="Selecionar"> </td>						
+						</tr>
+					</m:forEach>						
+
+				    				    
 				  </tbody>
 				  <!--Table body-->
 				

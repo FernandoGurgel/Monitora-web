@@ -11,17 +11,34 @@ import br.ifam.monitoriaweb.bean.ETipo;
 import br.ifam.monitoriaweb.repository.AlunoRepository;
 
 @Controller
+
 public class AlunoController {
 
 	@Autowired
 	private AlunoRepository ar;
-
+	
+	@RequestMapping("/aluno/")
+	public String index() {
+		return "a/gerenciaAula";
+	}
+	
+	
+	
+	
+	
 	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.GET)
 	public ModelAndView cadastra() {
 		ModelAndView view = new ModelAndView("c/cadastrarAluno");
 		view.addObject("Titulo", "Cadastra Aluno");
 		return view;
 	}
+	
+	@RequestMapping("/aluno/cadastraMonitoria")
+	public ModelAndView alunocadastraMonitoria() {
+		ModelAndView view = new ModelAndView("a/cadastraMonitoria");
+		return view;
+	}
+	
 	
 	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.GET)
 	public ModelAndView editar(long id) {
@@ -32,7 +49,7 @@ public class AlunoController {
 		return view;
 	}
 
-	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.POST)
+	@RequestMapping(value ="/coordenador/editarAluno", method = RequestMethod.POST)
 	public String editar(Aluno aluno,int tipo) {
 		aluno.setTipoaluno((tipo == 1 ? ETipo.Aluno : ETipo.Monitor));
 		ar.save(aluno);
@@ -51,5 +68,12 @@ public class AlunoController {
 		Aluno aluno = ar.findById(id);
 		ar.delete(aluno);
 		return "redirect:/coordenador/aluno";
+	}
+	
+	@RequestMapping("/aluno/alunoCadastraMonitoria")
+	public String cadastraAlunoMonitoria(Long id) {
+		Aluno aluno = ar.findById(id);
+		ar.delete(aluno);
+		return "redirect:/aluno/cadastraMonitoria";
 	}
 }

@@ -41,11 +41,11 @@
 					<!--Table head-->
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Nome</th>
-							<th>Descrição</th>
+							<th>Cod.</th>
+							<th>Disciplina</th>
 							<th>Monitor</th>
-							<th>Quantidade de Vagas</th>
+							<th>Data Inicio</th>
+							<th>Data Fim</th>
 							<th>Ações</th>
 						</tr>
 					</thead>
@@ -57,14 +57,16 @@
 							<tr>
 								<th scope="row">${dis.id}</th>
 								<td>${dis.nome}</td>
-								<td>${dis.informacoes}</td>
 								<td>${dis.aluno.nome }</td>
-								<td>${dis.qtdVagas}</td>
+								<td>${dis.dataInicio}</td>
+								<td>${dis.dataFim}</td>
 								<td><a class="btn btn-primary" title="Editar"
-									href="/disciplina/editar?id=${l.id}" role="button"><i
-										class="far fa-edit"></i></a> <a role="button"
-									class="btn btn-danger" href="/disciplina/excluir?id=${l.id}"
-									title="Excluir"><i class="far fa-trash-alt"></i></a></td>
+									href="/disciplina/editar?id=${dis.id}" role="button"><i
+										class="far fa-edit"></i></a>
+										 
+									<a role="button" class="btn btn-danger" href="/disciplina/excluir?id=${dis.id}"
+									title="Excluir"><i class="far fa-trash-alt"></i></a>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>

@@ -20,9 +20,7 @@
 						<label class="col control-label" for="idNome">Nome</label>
 						<div class="col">
 							<input id="idNome" name="nome" type="text"
-								placeholder="Nome do usuário"
-								pattern="[A-Za-z\s]+$" title="Nome inválido, este campo não aceita caracteres especiais  !"
-								class="form-control input-md"
+								placeholder="Nome do usuário" class="form-control input-md"
 								required value="${aluno.nome}">
 
 						</div>
@@ -35,7 +33,6 @@
 							<div class="col">
 								<input id="idMatricula" name="matricula" type="text"
 									placeholder="Número de Matriucula"
-									pattern="[0-9]+$" title="Matrícula inválido, este campo aceita apenas números !"
 									class="form-control input-md" value="${aluno.matricula}"
 									required>
 
@@ -47,7 +44,6 @@
 							<label class="col control-label" for="idUsuario">Curso</label>
 							<div class="col">
 								<input id="idCurso" name="curso" type="text"
-								title="Matrícula inválido, este campo aceita apenas números !"
 									placeholder="Nome do Curso" class="form-control input-md"
 									value="${aluno.curso}" required>
 
@@ -60,7 +56,6 @@
 						<label class="col control-label" for="idUsuario">E-mail</label>
 						<div class="col">
 							<input id="idEmail" name="email" type="email" placeholder="Email"
-								title=" Email inválido, faltam caracteres ! ( exemplo@email.com )"
 								class="form-control input-md" value="${aluno.email}" required>
 
 						</div>

@@ -20,6 +20,7 @@ public class DataDisponivel {
 	private String inicio;
 	private String fim;
 	
+	
 	@ManyToOne
 	@JoinColumn(name="codsala")
 	private Sala sala;
@@ -65,6 +66,4 @@ public class DataDisponivel {
 	public void setSala(Sala sala) {
 		this.sala = sala;
 	}	
-	
-	
 }
