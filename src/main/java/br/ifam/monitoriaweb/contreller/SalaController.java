@@ -47,7 +47,7 @@ public class SalaController {
 		return view;
 	}
 	
-	@RequestMapping(value="/sala/editar", method=RequestMethod.POST)
+	@RequestMapping(value="/sala/Editar", method=RequestMethod.POST)
 	public String editar(Sala sala) {
 		data.saveAll(horario);
 		sala.setDataDisponiveis(horario);

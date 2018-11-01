@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-12">
 
-			<h1>${titulo}</h1>
+			<h1>Cadastrar Disciplina</h1>
 		</div>
 	</div>
 
@@ -17,20 +17,20 @@
 
 			<form class="form-horizontal " method="post">
 				<div class="form-group">
-					<label for="nomeDisciplina">Nome:</label> 
-					<input type="text" class="form-control col" name="nome" id="nomedisciplina"
-						placeholder="Escreva um nome para disciplina" value="${disciplina.nome }" required>
+					<label for="nomeDisciplina">Nome:</label> <input type="text"
+						class="form-control col" name="nome" id="nomedisciplina"
+						placeholder="Escreva um nome para disciplina" required>
 				</div>
 				<div class="form-group">
 					<label for="TAdescricaodisciplina">Descrição:</label>
 					<textarea class="form-control col" id="TAdescricaodisciplina"
 						rows="3" placeholder="Escreva uma breve descrição"
-						name="informacoes" required>${disciplina.informacoes }</textarea>
+						name="informacoes" required></textarea>
 				</div>
 				<div class="form-group">
 					<label for="TAdescricaodisciplina">Aluno:</label> <input
 						type="text" name="nomeAluno" class="form-control" id="nome"
-						placeholder="Nome Aluno" value="${disciplina.aluno.nome}" required>
+						placeholder="Nome Aluno" required>
 				</div>
 
 				<div class="form-row">
@@ -50,12 +50,13 @@
 					</div>
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Data Inicio</label>
-						<input type="date" class="form-control" value="${disciplina.dataInicio }" name="dataInicio" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required >
+						<input type="date" class="form-control" name="dataInicio" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required >
 					</div>
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Data Fim</label>
-						<input type="date" class="form-control" name="dataFim" value="${disciplina.dataFim}" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required>
-					</div>					
+						<input type="date" class="form-control" name="dataFim" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required>
+					</div>
+					
 				</div>
 				<button class="btn btn-primary" type="submit">Cadastrar</button>
 				<a class="btn btn-danger" href="/coordenador/" role="button">Cancelar</a>
