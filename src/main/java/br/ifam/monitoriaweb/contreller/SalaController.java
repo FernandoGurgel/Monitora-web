@@ -33,8 +33,8 @@ public class SalaController {
 		ModelAndView view = new ModelAndView("c/cadastrarHorario");
 		view.addObject("titulo", "Editar Horário");
 		Sala sala = sr.findBycodsala(codsala);
-		horario = data.findBySala(sala); 
-		view.addObject("sala", sala);
+		List<DataDisponivel> listaHorario = data.findBySala(sala); 
+		view.addObject("horario", listaHorario);
 		return view;
 	}
 	

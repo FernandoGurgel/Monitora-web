@@ -27,10 +27,10 @@ public class CoordenadorController {
 	private SalaRepository sl;
 	@Autowired
 	private DataDisponivelRepository dd;
-
+	
 	@RequestMapping("/")
 	public String index() {
-		return "c/menuCoordenador";
+		return "c/index";
 	}
 	
 	@RequestMapping("/aluno")
