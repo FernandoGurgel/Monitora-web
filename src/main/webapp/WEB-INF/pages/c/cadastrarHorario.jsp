@@ -10,19 +10,11 @@
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<form class="form-horizontal" method="post">
+			<form class="form-horizontal" action="/sala/salvar" method="post">
 				<div class="form-group">
 				
-					<label for="nomeSala">Sala:</label> 
-						<select class="form-control col" name="codsala"
-							id="nomeSala" required>
-	
-								<c:forEach var="sal" items="${lista}">
-										<option value="${sal.codsala}">${sal.nome}</option>
-								</c:forEach>
-							
-						</select>
-					
+					<label for="nomeSala">Sala:</label>
+					<input class="form-control col" name="codsala" id="nomeSala" value="${sala.nome }" disabled> 					
 				</div>
 
 				<div class="form-row">
@@ -110,7 +102,6 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th col="col">cod.</th>
 								<th col="col">Semana</th>
 								<th col="col">Hora inicio</th>
 								<th col="col">Hora fim</th>
@@ -125,7 +116,7 @@
 
 				<div class="row justify-content-between">
 
-					<a class="btn btn-danger" href="/coordenandor/sala" role="button"><i
+					<a class="btn btn-danger" href="/coordenador/sala" role="button"><i
 						class="fas fa-times"></i> Cancelar</a>
 					<button class="btn btn-success" type="submit">
 						<i class="far fa-save"></i> Cadastrar
@@ -137,4 +128,3 @@
 </div>
 <script type="text/javascript" src="/static/js/sala.js" />
 <jsp:include page="rodape.jsp"></jsp:include>
-
