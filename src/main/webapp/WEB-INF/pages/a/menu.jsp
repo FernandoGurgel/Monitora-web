@@ -26,7 +26,7 @@ and open the template in the editor.
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="/monitor/">DevOps</a>
+		<a class="navbar-brand" href="/aluno/">DevOps</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@ and open the template in the editor.
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
-					href="/monitor/">Inicio <span class="sr-only">(current)</span></a>
+					href="/aluno/">Inicio <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>

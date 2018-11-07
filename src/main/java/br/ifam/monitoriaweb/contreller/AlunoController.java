@@ -19,12 +19,8 @@ public class AlunoController {
 	
 	@RequestMapping("/aluno/")
 	public String index() {
-		return "a/gerenciaAula";
+		return "a/index";
 	}
-	
-	
-	
-	
 	
 	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.GET)
 	public ModelAndView cadastra() {

@@ -16,19 +16,25 @@ and open the template in the editor.
 
 <!-- css, js, e outros componentes para estilizar a pagina index -->
 
-  <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="<c:url value="/static/vendor/bootstrap/css/bootstrap.min.css" />">
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet"
+	href="<c:url value="/static/vendor/bootstrap/css/bootstrap.min.css" />">
 
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" type="text/css" href= "<c:url value="/static/vendor/fontawesome-free/css/all.min.css" /> ">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" >
-    <link  rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+<!-- Custom fonts for this template -->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/static/vendor/fontawesome-free/css/all.min.css" /> ">
+<link rel="stylesheet" type="text/css"
+	href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+<link rel="stylesheet" type="text/css"
+	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" type="text/css" href="<c:url value="/static/vendor/magnific-popup/magnific-popup.css"/> " >
+<!-- Plugin CSS -->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/static/vendor/magnific-popup/magnific-popup.css"/> ">
 
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="<c:url value="/static/css/freelancer.min.css"/> ">
+<!-- Custom styles for this template -->
+<link rel="stylesheet"
+	href="<c:url value="/static/css/freelancer.min.css"/> ">
 
 
 
@@ -46,11 +52,12 @@ and open the template in the editor.
 	href="<c:url value="/static/css/jquery-ui.css" />" />
 <script src="/static/js/jquery.js"></script>
 <script src="/static/js/jquery-ui.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/static/css/estilo.css" />" />
-	
-	
+
+
 </head>
 
 
