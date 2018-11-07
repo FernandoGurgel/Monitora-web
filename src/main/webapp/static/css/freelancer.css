@@ -348,12 +348,7 @@ a:focus, a:hover, a:active {
 }
 
 .bg-primary {
-	background-image: url('/static/img/ifam.jpg');
-    background-size: cover;
-    width: 100%;
-    position: fixed;
-    height: 600px;
-  
+  background-color: #18BC9C !important;
 }
 
 .bg-secondary {

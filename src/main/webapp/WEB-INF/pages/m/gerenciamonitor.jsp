@@ -8,35 +8,48 @@
 	<div class="row justify-content-md-center">
 		<div class="col-12">
 
-		<h1 class="display-4" id="tituloGerenciarMonitoria">Gerencia Monitoria </h1>
-		
-         <br>
-         <br>
+         		<h1 class="display-4" id="tituloGerenciarMonitoria">Gerencia Monitoria </h1>
          
-        	<!--Table-->
+       			<div class="row justify-content-end align-items-center">
+           
+				
+				<div class="col-3 my-4 ">
+					<a class="btn btn-success"
+						href="adicionarHorario"><i class="fas fa-plus"></i> Adicionar Novo Horário
+					</a>
+				</div>
+			</div>
+        
+
+              <!--Table-->
               
 			<div class="container">
-			<div class="span10 offset1">
-			              
-			              
-				<table class="table table-hover table-fixed table-striped table-bordered">
-				<caption>Selecione uma Sala</caption>
-				  <!--Table head-->
-				  <thead>
-				   <tr>
-        <th>HORÁRIO</th>
+				<div class="span10 offset1">
+              
+              
+					<table class="table table-hover table-fixed table-striped table-bordered">
+					 <caption>Programação de Monitoria</caption>
+					
+					  <!--Table head-->
+					  <thead   class="thead">
+					    <tr>
+					      <th>HORÁRIO</th>
       <th>2ª-FEIRA</th>
       <th>3ª-FEIRA</th>
       <th>4ª-FEIRA </th>
       <th>5ª-FEIRA</th>
       <th>6ª-FEIRA</th>
       <th>Ação</th>
-    </tr>
-  </thead>
-			<!--Table head-->
-
-  <!--Table body-->
-  <tbody>
+					      
+					      
+					      
+					      
+					    </tr>
+					  </thead>
+					  <!--Table head-->
+					
+					  <!--Table body-->
+					<tbody>
     <tr>
         <th></th>
       <th scope="row"></th>
@@ -47,7 +60,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
       
        <tr>
         <th></th>
@@ -59,7 +72,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
    
     </tr>
 
@@ -74,7 +87,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
         <tr>
@@ -87,7 +100,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
         <tr>
@@ -100,7 +113,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
         <tr>
@@ -113,21 +126,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -141,7 +140,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -155,7 +154,21 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
+       </tr>
+       
+       
+        <tr>
+        <th></th>
+      <th scope="row"></th>
+      <th></th>
+      <th></th>
+      <th></th>  
+      <th></th>
+    
+     
+      
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -170,7 +183,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -184,7 +197,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr> <tr>
         <th></th>
       <th scope="row"></th>
@@ -195,19 +208,16 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
     
    
   </tbody>
-  <!--Table body-->
-
-</table>
-			</div>
-			</div>
-			
-			<!--Table-->
-
+					  <!--Table body-->
+					
+					</table>
+    		</div>
+		</div>
 		</div>
 	</div>
 </div>

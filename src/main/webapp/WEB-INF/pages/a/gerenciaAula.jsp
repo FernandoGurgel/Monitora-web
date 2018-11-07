@@ -1,29 +1,38 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="m" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="menu.jsp"></jsp:include>
 
 <br>
 
-<div class="container">
-	<div class="row justify-content-md-center">
-		<div class="col-12">
-
-		<h1 class="display-4" id="tituloGerenciarMonitoria">Gerencia Monitoria </h1>
-		
-         <br>
-         <br>
+ <h1 class="display-4" id="tituloGerenciarMonitoria"> Gerenciar Aulas</h1>
          
-        	<!--Table-->
+       <div class="row justify-content-end align-items-center">
+           
+				
+				<div class="col-3 my-4 ">
+					<a class="btn btn-success"
+                                           href="cadastraMonitoria"><i class="fas fa-plus"></i> Inscrever Monitoria
+						</a>
+                                  
+				</div>
+           
+           
+				
+			</div>
+        
+
+              <!--Table-->
               
-			<div class="container">
-			<div class="span10 offset1">
-			              
-			              
-				<table class="table table-hover table-fixed table-striped table-bordered">
-				<caption>Selecione uma Sala</caption>
-				  <!--Table head-->
-				  <thead>
-				   <tr>
+<div class="container">
+<div class="span10 offset2">
+              
+              
+<table class="table table-hover table-fixed table-striped table-bordered">
+ <caption>Disciplinas Matriculadas</caption>
+
+  <!--Table head-->
+  <thead   class="thead">
+    <tr>
         <th>HORÁRIO</th>
       <th>2ª-FEIRA</th>
       <th>3ª-FEIRA</th>
@@ -38,16 +47,16 @@
   <!--Table body-->
   <tbody>
     <tr>
-        <th></th>
+        <th>13:00~14:59</th>
       <th scope="row"></th>
       <th></th>
       <th></th>
-      <th></th>  
+      <th>Estrura de dados ~ Sala 6</th>  
       <th></th>
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
       
        <tr>
         <th></th>
@@ -59,7 +68,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
    
     </tr>
 
@@ -74,7 +83,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
         <tr>
@@ -87,7 +96,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
         <tr>
@@ -100,7 +109,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
         <tr>
@@ -113,21 +122,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -141,7 +136,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -155,7 +150,21 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
+       </tr>
+       
+       
+        <tr>
+        <th></th>
+      <th scope="row"></th>
+      <th></th>
+      <th></th>
+      <th></th>  
+      <th></th>
+    
+     
+      
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -170,7 +179,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
        
        
@@ -184,7 +193,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr> <tr>
         <th></th>
       <th scope="row"></th>
@@ -195,7 +204,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
        </tr>
     
    
@@ -203,13 +212,11 @@
   <!--Table body-->
 
 </table>
-			</div>
-			</div>
-			
-			<!--Table-->
-
-		</div>
-	</div>
+    </div>
 </div>
-<jsp:include page="rodape.jsp"></jsp:include>
 
+<!--Table-->
+
+
+
+<jsp:include page="rodape.jsp"></jsp:include>
