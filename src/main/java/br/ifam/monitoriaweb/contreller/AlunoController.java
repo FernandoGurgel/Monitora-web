@@ -36,7 +36,7 @@ public class AlunoController {
 	}
 	
 	
-	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.GET)
+	@RequestMapping(value ="/coordenador/editarAluno", method = RequestMethod.GET)
 	public ModelAndView editar(long id) {
 		ModelAndView view = new ModelAndView("c/cadastrarAluno");
 		Aluno aluno = ar.findById(id);
@@ -59,7 +59,7 @@ public class AlunoController {
 		return "redirect:/coordenador/aluno";
 	}
 	
-	@RequestMapping("/coordenandor/deletarAluno")
+	@RequestMapping("/coordenador/deletarAluno")
 	public String deletarAluno(Long id) {
 		Aluno aluno = ar.findById(id);
 		ar.delete(aluno);

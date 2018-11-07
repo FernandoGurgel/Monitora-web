@@ -64,9 +64,9 @@
 								<td>${aluno.tipoaluno}</td>
 
 								<td><a class="btn btn-primary"
-									href="/coordenandor/editarAluno?id=${ aluno.id}" role="button"
+									href="/coordenador/editarAluno?id=${ aluno.id}" role="button"
 									title="Editar"><i class="far fa-edit"></i></a> <a
-									href="/coordenandor/deletarAluno?id=${ aluno.id}" role="button"
+									href="/coordenador/deletarAluno?id=${ aluno.id}" role="button"
 									class="btn btn-danger" title="Excluir"> <i
 										class="far fa-trash-alt"></i></a></td>
 							</tr>
