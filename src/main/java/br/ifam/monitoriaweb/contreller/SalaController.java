@@ -8,9 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import br.ifam.monitoriaweb.bean.DataDisponivel;
 import br.ifam.monitoriaweb.bean.Sala;
 import br.ifam.monitoriaweb.repository.DataDisponivelRepository;
@@ -33,9 +31,9 @@ public class SalaController {
 		ModelAndView view = new ModelAndView("c/cadastrarHorario");
 		view.addObject("titulo", "Editar Horário");
 		Sala sala = sr.findBycodsala(codsala);
-		List<DataDisponivel> listaHorario = data.findBySala(sala);
+		horario = data.findBySala(sala);
 		view.addObject("sala", sala );
-		view.addObject("horario", listaHorario);
+		view.addObject("horario", horario);
 		return view;
 	}
 	
@@ -99,6 +97,8 @@ public class SalaController {
 		for(DataDisponivel x: horario) {
 			if(x.getId() == id) {
 				horario.remove(x);
+				DataDisponivel dd = data.findById(id);
+				data.delete(dd);
 				return "{sucess}";
 			}
 		}

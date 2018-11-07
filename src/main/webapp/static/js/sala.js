@@ -38,6 +38,7 @@ function carregar() {
 		
 		for(x = 0; x <  data.length; x++){
 			$(".addDia").append("<tr>" +
+					"<th scope='row'>"+data[x].id+"</th>"+
 					"<td>"+data[x].dia+"</th>"+
 					"<td>"+data[x].inicio+"</td>" +
 					"<td>"+data[x].fim+"</td>" +
