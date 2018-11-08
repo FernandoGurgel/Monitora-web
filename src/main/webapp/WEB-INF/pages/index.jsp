@@ -4,7 +4,7 @@
 <br/>
  
  
- <body id="page-top">
+ <body id="page-top" >
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
@@ -28,14 +28,31 @@
           </ul>
         </div>
       </div>
+      
+      
     </nav>
-
+    
+  
+    
     <!-- Header -->
-    <header class="masthead bg-primary  text-center">
-      <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="static/img/teacher.png" alt="">
-      <h1 class="text-uppercase text-white  mb-0">Sistema de Monitoria</h1>
-   <br>
+   <header >
+    <section class= "header" >
+       <img class="img-fluid mb-5 d-block mx-auto" src="static/img/teacher.png" alt="">
+      <h1 class="text-uppercase text-black text-center  mb-0">Sistema de Monitoria</h1>
+      </section>
+      
+      
+      
+    
+    
+     
+      
+    
+    
+      
+
+   
+   <div class="container">
    
                <!--CARTÕES DE ESCOLHA-->
         <div class="card-group">
@@ -67,10 +84,13 @@
   </div>
 </div>
       </div>
+      </div>
     </header>
 
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
+    
+      
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Equipe</h2>
         <hr class="star-dark mb-5">

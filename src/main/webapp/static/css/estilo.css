@@ -129,3 +129,20 @@ nput,
   background-color: #3b5998;
 }
 
+.header::before {
+    background-image:url('static/img/ifam.jpeg');
+    background-size: cover;
+    width: 100%;
+    position: fixed;
+    height: 100px;
+
+}
+
+
+
+.main {
+    background: #E7E3DA;
+    position: relative;
+    top: 600px;
+    font-family: 'Raleway', sans-serif;
+}

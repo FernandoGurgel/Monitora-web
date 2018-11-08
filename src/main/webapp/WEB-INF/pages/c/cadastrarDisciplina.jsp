@@ -28,23 +28,24 @@
 						name="informacoes" required>${disciplina.informacoes }</textarea>
 				</div>
 				<div class="form-group">
-					<label for="TAdescricaodisciplina">Aluno:</label> <input
-						type="text" name="nomeAluno" class="form-control" id="nome"
-						placeholder="Nome Aluno" value="${disciplina.aluno.nome}" required>
+					<label for="TAdescricaodisciplina">Monitor:</label> 
+					<select
+					class="form-control col" name="nomeMonitor" id="nome" required>
+					<c:forEach var="aluno" items="${Monitor}"> 
+					<option value="${aluno.nome}"  > ${aluno.nome} </option>
+					</c:forEach>
+					</select>
+					
 				</div>
 
 				<div class="form-row">
 					<div class="form-group col">
-						<label for="CBvagasDisciplina">Quantidade de Vagas</label> <select
+						<label for="CBvagasDisciplina">Quantidade de Vagas</label> 
+						<select
 							class="form-control col" name="qtdVagas"
-							id="CBvagasDisciplina" required>
+							id="CBvagasDisciplina" disabled required>
 
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
+						
 							<option selected value="12">12</option>
 						</select>
 					</div>
