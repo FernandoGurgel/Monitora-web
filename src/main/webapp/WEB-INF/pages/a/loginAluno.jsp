@@ -27,7 +27,7 @@
 							<span>Lembrar senha</span> 
 							<span><input id="remember-me" name="remember-me"
 									type="checkbox"></span></label><br> <input type="submit"
-								name="submit" class="btn btn-info btn-md" value="submit">
+								name="submit" class="btn btn-info btn-md" id="validar" value="submit">
 						</div>
 
 					</form>

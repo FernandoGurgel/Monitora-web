@@ -48,8 +48,8 @@ public class DisciplinaController {
 	}
 	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.POST)
-	public String cadastrar(Disciplina disciplina, String nomeAluno) {
-		Aluno bean = al.findByNome(nomeAluno);
+	public String cadastrar(Disciplina disciplina, long codAluno) {
+		Aluno bean = al.findById(codAluno);
 		disciplina.setAluno(bean);
 //		disciplina.setDataFim(fim);
 //		disciplina.setDataInicio(inicio);
