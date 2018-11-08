@@ -23,6 +23,7 @@
       <th>Dia da Semana</th>
       <th>Horário Inicio</th>
       <th>Horário Fim</th>
+      <th>Vagas Restantes</th>
           <th>Ações</th>
     </tr>
   </thead>
@@ -31,34 +32,21 @@
   <!--Table body-->
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Estrutura de Dados</td>
-      <td>SEXTA-FEIRA</td>
-      <td>14:00</td>
-      <td>15:59</td>
-      <td><input class="btn btn-primary" type="submit" value="Escolher"> 
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Direito Empresarial</td>
-      <td>TERÇA-FEIRA</td>
-      <td>16:00</td>
-      <td>17:59</td>      
- 
-      
-      <td><input class="btn btn-primary" type="submit" value="Escolher"> 
-    </tr>
-    <tr>
-      <th scope="row">3</th> 
-      <td>Banco de Dados</td>
-      <td>QUINTA-FEIRA</td>
-      <td>15:00</td>
-      <td>16:59</td>
-   
-      <td><input class="btn btn-primary" type="submit" value="Escolher"> 
-    </tr>
-    
-   
+    <a:forEach var="reservas" items="${lista}">
+				    	<tr>
+						      <th scope="row">${reservas[0]}</th>
+						      <td>${reservas[1]}</td>
+						      <td>${reservas[2]}</td>
+						      <td>${reservas[3]}</td>
+						      <td>${reservas[4]}</td>	
+						      <td>${reservas[5]}</td>	
+						      <td>
+						      <a role="button"
+								class="btn btn-primary" href="/monitor/cadastrarhorario?id=${reservas[0] }" title="Selecionar"> Selecionar
+							  </a> </td>						
+						</tr>
+	</a:forEach>	
+	
   </tbody>
   <!--Table body-->
 

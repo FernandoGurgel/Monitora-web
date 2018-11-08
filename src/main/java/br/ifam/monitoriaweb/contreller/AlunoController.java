@@ -1,16 +1,19 @@
 package br.ifam.monitoriaweb.contreller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.ifam.monitoriaweb.bean.Aluno;
+import br.ifam.monitoriaweb.bean.DataDisponivel;
+import br.ifam.monitoriaweb.bean.Disciplina;
 import br.ifam.monitoriaweb.bean.ETipo;
+import br.ifam.monitoriaweb.bean.Reserva;
 import br.ifam.monitoriaweb.repository.AlunoRepository;
+import br.ifam.monitoriaweb.repository.DisciplinaRepository;
+import br.ifam.monitoriaweb.repository.ReservaRepository;
 
 @Controller
 
@@ -18,6 +21,12 @@ public class AlunoController {
 
 	@Autowired
 	private AlunoRepository ar;
+
+	@Autowired
+	private ReservaRepository rr;
+	
+	@Autowired
+	private DisciplinaRepository dr;
 	
 	private int aluno = -1;
 	
@@ -51,11 +60,36 @@ public class AlunoController {
 	@RequestMapping("/aluno/cadastraMonitoria")
 	public ModelAndView alunocadastraMonitoria() {
 		ModelAndView view = new ModelAndView("a/cadastraMonitoria");
+		
+		Iterable<Reserva> lista = rr.findByMonitorDisciplina();
+		view.addObject("lista", lista);	
+	
 		return view;
-	}
+	}/*
+	@RequestMapping(value="/aluno/cadastrarhorario",method=RequestMethod.GET)
+	public String adicionarReserva(long id) {
+		
+		DataDisponivel dd = dataD.findById(id);
+		
+		// Alterar Session
+		Aluno al = ar.findById(codmonitor);
+		
+		
+		Reserva reserva = new Reserva();
+		reserva.setCodsala(dd.getSala());
+		reserva.setCodmonitor(al);
+		reserva.setHoraIncio(dd.getInicio());
+		reserva.setHoraFim(dd.getFim());
+		reserva.setDia(dd.getDia());
 	
-	
-	@RequestMapping(value ="/coordenador/editarAluno", method = RequestMethod.GET)
+		rr.save(reserva);
+		dataD.delete(dd);
+
+		String retorno;
+		retorno = "redirect:/monitor/?id=" + codmonitor;
+		return "redirect:/aluno/";
+	}*/
+	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.GET)
 	public ModelAndView editar(long id) {
 		ModelAndView view = new ModelAndView("c/cadastrarAluno");
 		Aluno aluno = ar.findById(id);
@@ -78,7 +112,7 @@ public class AlunoController {
 		return "redirect:/coordenador/aluno";
 	}
 	
-	@RequestMapping("/coordenador/deletarAluno")
+	@RequestMapping("/coordenandor/deletarAluno")
 	public String deletarAluno(Long id) {
 		Aluno aluno = ar.findById(id);
 		ar.delete(aluno);

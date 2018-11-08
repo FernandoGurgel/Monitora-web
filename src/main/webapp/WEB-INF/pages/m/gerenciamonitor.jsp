@@ -11,7 +11,11 @@
          		<h1 class="display-4" id="tituloGerenciarMonitoria">Gerencia Monitoria </h1>
          
        			<div class="row justify-content-end align-items-center">
+       								
+					
+				<h4>${disciplina.nome}</h4>  			
            
+				<div class="col-2">Horários: 0/6</div>
 				
 				<div class="col-3 my-4 ">
 					<a class="btn btn-success"
@@ -33,22 +37,18 @@
 					  <!--Table head-->
 					  <thead   class="thead">
 					    <tr>
-					      <th>HORÁRIO</th>
-      <th>2ª-FEIRA</th>
-      <th>3ª-FEIRA</th>
-      <th>4ª-FEIRA </th>
-      <th>5ª-FEIRA</th>
-      <th>6ª-FEIRA</th>
-      <th>Ação</th>
-					      
-					      
-					      
-					      
+					      <th>ID</th>
+					      <th>Horário Inicio</th>
+					      <th>Horário Fim</th>
+					      <th>Dia</th>
+					      <th>Sala</th>
+					      <th>Ações</th>
 					    </tr>
 					  </thead>
 					  <!--Table head-->
 					
 					  <!--Table body-->
+<<<<<<< HEAD
 					<tbody>
     <tr>
         <th></th>
@@ -213,6 +213,34 @@
     
    
   </tbody>
+=======
+					  <tbody>
+					  
+						  <m:forEach var="reservas" items="${lista}">
+						   <m:if test="${reservas.codmonitor.id eq monitoria}">
+					    	<tr>
+
+							      <th scope="row">${reservas.rescodigo}</th>
+							      <td>${reservas.horaIncio}</td>
+							      <td>${reservas.horaFim}</td>
+							      <td>${reservas.dia}</td>	
+							      <td>${reservas.codsala.nome}</td>	
+
+							      <td>
+							      <a role="button"
+									class="btn btn-primary" href="/monitor/removereserva?rescodigo=${reservas.rescodigo }" title="Alunos Cadastrados"><i
+											class="far fa-calendar-alt"></i>
+										</a> 
+							      <a role="button"
+									class="btn btn-danger" href="/monitor/removereserva?rescodigo=${reservas.rescodigo }" title="Remover Horário"><i
+											class="far fa-trash-alt"></i>
+										</a> </td>	
+																				
+							</tr>	
+							</m:if>
+						 </m:forEach>	
+					  </tbody>
+>>>>>>> origin/segurança
 					  <!--Table body-->
 					
 					</table>

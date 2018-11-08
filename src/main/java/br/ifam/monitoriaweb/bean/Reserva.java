@@ -3,6 +3,7 @@ package br.ifam.monitoriaweb.bean;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -11,17 +12,18 @@ import javax.persistence.OneToOne;
 @Entity
 public class Reserva {
 
-	@Id
+	@Id @GeneratedValue
 	private long rescodigo;
 	@OneToOne
 	private Aluno codmonitor;
 	@OneToMany
-	@JoinColumn(name="rescodigo")
+	@JoinColumn(name="rescodigoaluno")
 	private List<Aluno> alunos;
 	@OneToOne
 	private Sala codsala;
 	private String horaIncio;
 	private String horaFim;
+	private String dia;
 	
 	public Reserva() {}
 	
@@ -61,4 +63,13 @@ public class Reserva {
 	public void setHoraFim(String horaFim) {
 		this.horaFim = horaFim;
 	}
+
+	public String getDia() {
+		return dia;
+	}
+
+	public void setDia(String dia) {
+		this.dia = dia;
+	}
+	
 }
