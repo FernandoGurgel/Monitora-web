@@ -1,8 +1,10 @@
 package br.ifam.monitoriaweb.contreller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.ifam.monitoriaweb.bean.Aluno;
 import br.ifam.monitoriaweb.bean.Disciplina;
+import br.ifam.monitoriaweb.bean.ETipo;
 import br.ifam.monitoriaweb.repository.AlunoRepository;
 import br.ifam.monitoriaweb.repository.DisciplinaRepository;
 
@@ -24,9 +27,22 @@ public class DisciplinaController {
 	@Autowired
 	private AlunoRepository al;	
 	
+	
+
+	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView view = new ModelAndView("c/cadastrarDisciplina");
+		
+		List<Aluno> alunos = new ArrayList<>();
+		Iterable<Aluno> lista = al.findAll();
+		for(Aluno a : lista) {
+			if(a.getTipoaluno() == ETipo.Monitor.toString())
+				alunos.add(a);
+		}
+		
+		view.addObject("Monitor",lista);
+		
 		view.addObject("titulo", "Cadastrar Disciplina");
 		return view;
 	}

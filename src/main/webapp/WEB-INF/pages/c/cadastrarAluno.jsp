@@ -42,17 +42,22 @@
 							</div>
 						</div>
 
-						<!-- TEXTO-->
-						<div class="form-group col">
-							<label class="col control-label" for="idUsuario">Curso</label>
-							<div class="col">
-								<input id="idCurso" name="curso" type="text"
-								title="Matrícula inválido, este campo aceita apenas números !"
-									placeholder="Nome do Curso" class="form-control input-md"
-									value="${aluno.curso}" required>
-
-							</div>
-						</div>
+						<!-- combobox curso-->
+						 <div class="form-group col-md-4">
+      <label for="curso">Curso</label>
+      <select id="curso" name="curso" class="form-control">
+        <option selected></option>
+        <option value="tads"> Tecnologia em Analise e Desenvolvimento de Sistemas</option>
+        <option value="mat"> Licenciatura Matamática </option>
+        <option value="bio"> Licenciatura Biologia</option>
+        <option value="fis"> Licenciatura Fisica</option>
+        <option value="pub"> Tecnologia em Publicidade </option>
+        <option value="engm"> Engenharia Mecânica</option>
+        <option value="engc"> Engenharia Civil</option>
+        <option value="amb"> Tecnologia em Meio Ambiente</option>
+        
+      </select>
+    </div>
 					</div>
 
 					<!-- TEXTO-->
