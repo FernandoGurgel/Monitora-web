@@ -33,11 +33,10 @@ and open the template in the editor.
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
-				
 			</ul>
 		</div>
 		
 		<a href="/">
-			<button type="button" class="btn btn-outline-danger">sair</button>
+			<button type="button" class="btn btn-outline-danger">Volta</button>
 		</a>
 	</nav>

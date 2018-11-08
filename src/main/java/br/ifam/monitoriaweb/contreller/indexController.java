@@ -21,4 +21,24 @@ public class indexController {
 		return "co/contato";
 	}
 
+	@RequestMapping("/coordenador")
+	public String coordenador() {
+		ModelAndView view = new ModelAndView("c/menuCoordenador");
+
+		return "redirect:/coordenador/";
+	}
+
+	@RequestMapping("/monitor")
+	public String monitor() {
+		ModelAndView view = new ModelAndView("m/gerenciamonitor");
+
+		return "redirect:/monitor/";
+	}
+
+	@RequestMapping("/aluno")
+	public String auno() {
+		ModelAndView view = new ModelAndView("a/gerenciaAula");
+
+		return "redirect:/aluno/";
+	}
 }
