@@ -29,6 +29,12 @@ public class MonitorController {
 		return "m/gerenciamonitor";
 	}
 	
+	@RequestMapping(value="/monitor/listaAluno/", method=RequestMethod.GET)
+	public ModelAndView listaAluno() {
+		ModelAndView view = new ModelAndView("m/listaAluno"); 
+		return view;
+	}
+	
 	@RequestMapping(value="/monitor/adicionarHorario", method=RequestMethod.GET)
 	public ModelAndView horariodisciplina() {
 		ModelAndView view = new ModelAndView("m/adicionarHorario");

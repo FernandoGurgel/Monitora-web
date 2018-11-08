@@ -47,7 +47,7 @@
     
      
       
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
+      <th>  <button type="button" class="btn btn-danger" onclick="/monitor/listaAluno/" > Selecionar</button> </th>
       
        <tr>
         <th></th>
