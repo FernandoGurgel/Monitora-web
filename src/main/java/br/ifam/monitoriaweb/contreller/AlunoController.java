@@ -1,9 +1,11 @@
 package br.ifam.monitoriaweb.contreller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.ifam.monitoriaweb.bean.Aluno;
@@ -35,7 +37,7 @@ public class AlunoController {
 		return "a/loginAluno";
 	}
 	
-	@RequestMapping(name="/aluno/validar", method=RequestMethod.POST)
+	@RequestMapping("/aluno/validar")
 	@ResponseBody
 	public String validar(@NonNull String email,@NonNull String senha) {
 		Aluno aluno = ar.findByValida(email,senha);		
