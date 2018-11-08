@@ -9,13 +9,6 @@ import br.ifam.monitoriaweb.bean.Sala;
 
 @Controller
 public class LoginController {
-
-	
-	
-	@RequestMapping("/")
-	public String index() {
-		return "index";
-	}
 	
 	@RequestMapping("/login/coordenador")
 	public String coordenador() {
