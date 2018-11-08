@@ -11,27 +11,14 @@ import br.ifam.monitoriaweb.bean.Sala;
 
 public class indexController {
 
-	
-	
 	@RequestMapping("/")
 	public String index() {
-		return "/index";
+		return "index";
 	}
-	
+
 	@RequestMapping("/contato/")
 	public String contato() {
 		return "co/contato";
 	}
-	
-	
-	
-	
-    }
-	
- 
-	
-	
 
-	
-	
-	
+}

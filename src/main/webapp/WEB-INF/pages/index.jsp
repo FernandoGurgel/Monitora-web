@@ -72,7 +72,7 @@
 							class="d-inline-block align-top" alt="">
 						<h5 class="card-title">Aluno</h5>
 						<p class="card-text">Acesso ao aluno</p>
-						<a href="aluno/" class="btn btn-primary">Entrar</a>
+						<a href="loginAluno/" class="btn btn-primary">Entrar</a>
 					</div>
 				</div>
 			</div>
