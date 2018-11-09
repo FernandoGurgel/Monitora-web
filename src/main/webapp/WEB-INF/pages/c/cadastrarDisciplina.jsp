@@ -30,9 +30,9 @@
 				<div class="form-group">
 					<label for="TAdescricaodisciplina">Monitor:</label> 
 					<select
-					class="form-control col" name="nomeMonitor" id="nome" required>
+					class="form-control col" name="codAluno" id="nome" required>
 					<c:forEach var="aluno" items="${Monitor}"> 
-					<option value="${aluno.nome}"  > ${aluno.nome} </option>
+					<option value="${aluno.id}"  > ${aluno.nome} </option>
 					</c:forEach>
 					</select>
 					

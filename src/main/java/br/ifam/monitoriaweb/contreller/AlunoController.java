@@ -38,13 +38,12 @@ public class AlunoController {
 	}
 	
 	@RequestMapping("/aluno/validar")
-	@ResponseBody
 	public String validar(@NonNull String email,@NonNull String senha) {
 		Aluno aluno = ar.findByValida(email,senha);		
 		if(aluno != null)
-			return "success";
+			return "redirect:/aluno/?id="+aluno.getId();
 		else
-			return "false";
+			return "redirect:/aluno/login";
 	}
 	
 	@RequestMapping("/aluno/")
