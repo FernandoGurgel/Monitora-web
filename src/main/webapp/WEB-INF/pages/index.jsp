@@ -4,6 +4,8 @@
 <br />
 
 
+
+
 <body id="page-top">
 
 	<!-- Navigation -->
@@ -29,14 +31,14 @@
 						href="#about">Sobre</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-						href="#contact">Contato</a></li>
+						href="contato/">Contato</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
 	<!-- Header -->
-	<header class="masthead bg-primary  text-center">
+	<header class="masthead bg-terceiro  text-center">
 		<div class="container">
 			<img class="img-fluid mb-5 d-block mx-auto"
 				src="static/img/teacher.png" alt="">
@@ -81,7 +83,7 @@
 	<!-- Portfolio Grid Section -->
 	<section class="portfolio" id="portfolio">
 		<div class="container">
-			<h2 class="text-center text-uppercase text-secondary mb-0">Equipe</h2>
+			<h2 class="text-center text-uppercase text-secondary mb-0">Time</h2>
 			<hr class="star-dark mb-5">
 			<div class="row">
 				<div class="col-md-6 col-lg-4">
@@ -215,15 +217,12 @@
 					<ul class="list-inline mb-0">
 						<li class="list-inline-item"><a
 							class="btn btn-outline-light btn-social text-center rounded-circle"
-							href="#"> <i class="fab fa-fw fa-facebook-f"></i>
+							href="https://www.facebook.com/DevOps-708907239467286"> <i class="fab fa-fw fa-facebook-f"></i>
 						</a></li>
+					
 						<li class="list-inline-item"><a
 							class="btn btn-outline-light btn-social text-center rounded-circle"
-							href="#"> <i class="fab fa-fw fa-google-plus-g"></i>
-						</a></li>
-						<li class="list-inline-item"><a
-							class="btn btn-outline-light btn-social text-center rounded-circle"
-							href="#"> <i class="fab fa-fw fa-twitter"></i>
+							href="https://twitter.com/DevOps05141152"> <i class="fab fa-fw fa-twitter"></i>
 						</a></li>
 
 					</ul>
@@ -346,69 +345,3 @@
 		</div>
 	</div>
 
-	<!-- Portfolio Modal 5 -->
-	<div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
-		<div class="portfolio-modal-dialog bg-white">
-			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
-				href="#"> <i class="fa fa-3x fa-times"></i>
-			</a>
-			<div class="container text-center">
-				<div class="row">
-					<div class="col-lg-8 mx-auto">
-						<h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5" src="img/portfolio/safe.png" alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close Project
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Portfolio Modal 6 -->
-	<div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
-		<div class="portfolio-modal-dialog bg-white">
-			<a class="close-button d-none d-md-block portfolio-modal-dismiss"
-				href="#"> <i class="fa fa-3x fa-times"></i>
-			</a>
-			<div class="container text-center">
-				<div class="row">
-					<div class="col-lg-8 mx-auto">
-						<h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-						<hr class="star-dark mb-5">
-						<img class="img-fluid mb-5" src="img/portfolio/submarine.png"
-							alt="">
-						<p class="mb-5">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias
-							magnam, recusandae quos quis inventore quisquam velit asperiores,
-							vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-						<a
-							class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss"
-							href="#"> <i class="fa fa-close"></i> Close Project
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-	</div>
