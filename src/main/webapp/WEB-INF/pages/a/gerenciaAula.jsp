@@ -4,219 +4,74 @@
 
 <br>
 
- <h1 class="display-4" id="tituloGerenciarMonitoria"> Gerenciar Aulas</h1>
-         
-       <div class="row justify-content-end align-items-center">
-           
-				
-				<div class="col-3 my-4 ">
-					<a class="btn btn-success"
-                                           href="cadastraMonitoria"><i class="fas fa-plus"></i> Inscrever Monitoria
-						</a>
-                                  
-				</div>
-           
-           
-				
-			</div>
-        
+<h1 class="display-4" id="tituloGerenciarMonitoria">Gerenciar Aulas</h1>
 
-              <!--Table-->
-              
-<div class="container">
-<div class="span10 offset2">
-              
-              
-<table class="table table-hover table-fixed table-striped table-bordered">
- <caption>Disciplinas Matriculadas</caption>
-
-  <!--Table head-->
-  <thead   class="thead">
-    <tr>
-        <th>HORÁRIO</th>
-      <th>2ª-FEIRA</th>
-      <th>3ª-FEIRA</th>
-      <th>4ª-FEIRA </th>
-      <th>5ª-FEIRA</th>
-      <th>6ª-FEIRA</th>
-      <th>Ação</th>
-    </tr>
-  </thead>
-			<!--Table head-->
-
-  <!--Table body-->
-  <tbody>
-    <tr>
-        <th>13:00~14:59</th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th>Estrura de dados ~ Sala 6</th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-      
-       <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-   
-    </tr>
+<div class="row justify-content-end align-items-center">
 
 
- <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr> <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Sair</button> </th>
-       </tr>
-    
-   
-  </tbody>
-  <!--Table body-->
+	<div class="col-3 my-4 ">
+		<a class="btn btn-success" href="cadastraMonitoria"><i
+			class="fas fa-plus"></i> Inscrever Monitoria </a>
 
-</table>
-    </div>
+	</div>
+
+
+
 </div>
+
 
 <!--Table-->
 
+<div class="container">
+	<div class="span10 offset2">
+
+
+		<table
+			class="table table-hover table-fixed table-striped table-bordered">
+			<caption>Disciplinas Matriculadas</caption>
+
+			<!--Table head-->
+			<thead class="thead">
+				<tr>
+					<th>Disciplina</th>
+					<th>Horário Inicio</th>
+					<th>Horário Fim</th>
+					<th>Dia da Semana</th>
+					<th>Sala</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<!--Table head-->
+
+			<!--Table body-->
+			<tbody>
+				<a:forEach var="reserva" items="${lista }">
+
+					<tr>
+						<th>${reserva.codmonitor}</th>
+						<th scope="row">${reserva.horaIncio}</th>
+						<th>${reserva.horaFim}</th>
+						<th>${reserva.dia}</th>
+						<th>${reserva.codsala.nome}</th>
+
+
+						<th>
+							<button type="button" class="btn btn-danger">Sair</button>
+						</th>
+
+					</tr>
+				</a:forEach>
+
+			</tbody>
+			<!--Table body-->
+
+		</table>
+
+
+	</div>
+</div>
+
+<!--Table-->
 
 
 <jsp:include page="rodape.jsp"></jsp:include>

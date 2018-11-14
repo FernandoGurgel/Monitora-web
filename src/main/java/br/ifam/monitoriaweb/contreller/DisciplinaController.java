@@ -61,6 +61,17 @@ public class DisciplinaController {
 	public ModelAndView editar(long id) {
 		ModelAndView view = new ModelAndView("c/cadastrarDisciplina");
 		Disciplina a = em.findById(id);
+		
+		List<Aluno> alunos = new ArrayList<>();
+		Iterable<Aluno> lista = al.findAll();
+		for(Aluno a2 : lista) {
+			if(a2.getTipoaluno() == ETipo.Monitor.toString())
+				alunos.add(a2);
+		}
+		
+		view.addObject("Monitor",lista);
+		
+		
 		view.addObject("disciplina", a);
 		view.addObject("titulo", "Editar Disciplina");
 		return view;

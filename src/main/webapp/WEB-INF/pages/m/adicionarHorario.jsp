@@ -23,186 +23,39 @@
 				<caption>Selecione uma Sala</caption>
 				  <!--Table head-->
 				  <thead>
-				   <tr>
-        <th>HORÁRIO</th>
-      <th>2ª-FEIRA</th>
-      <th>3ª-FEIRA</th>
-      <th>4ª-FEIRA </th>
-      <th>5ª-FEIRA</th>
-      <th>6ª-FEIRA</th>
-      <th>Ação</th>
-    </tr>
-  </thead>
-			<!--Table head-->
+				    <tr>
+				      <th>ID</th>
+				      <th>Sala</th>
+				      <th>Dia da Semana</th>
+				      <th>Horário Inicio</th>
+				      <th>Horário Fim</th>
+				          <th>Ações</th>
+				    </tr>
+				  </thead>
+				  <!--Table head-->
+				
+				  <!--Table body-->
+				  <tbody>
+				    <m:forEach var="datadisp" items="${lista}">
+				    	<tr>
+						      <th scope="row">${datadisp.id}</th>
+						      <td>${datadisp.sala.nome}</td>
+						      <td>${datadisp.dia}</td>
+						      <td>${datadisp.inicio}</td>
+						      <td>${datadisp.fim}</td>	
+						      <td>
+						      <a role="button"
+								class="btn btn-success" href="/monitor/addreserva?id=${datadisp.id }" title="Selecionar"><i
+										class="far fa-calendar-plus"></i>
+									</a> </td>						
+						</tr>
+					</m:forEach>						
 
-  <!--Table body-->
-  <tbody>
-    <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger" onclick="/monitor/listaAluno/" > Selecionar</button> </th>
-      
-       <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-   
-    </tr>
-
-
- <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-       
-       
-        <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr> <tr>
-        <th></th>
-      <th scope="row"></th>
-      <th></th>
-      <th></th>
-      <th></th>  
-      <th></th>
-    
-     
-      
-      <th>  <button type="button" class="btn btn-danger">Selecionar</button> </th>
-       </tr>
-    
-   
-  </tbody>
-  <!--Table body-->
-
-</table>
+				    				    
+				  </tbody>
+				  <!--Table body-->
+				
+				</table>
 			</div>
 			</div>
 			

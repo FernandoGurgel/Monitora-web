@@ -1,5 +1,7 @@
 package br.ifam.monitoriaweb.contreller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
@@ -29,8 +31,9 @@ public class AlunoController {
 	
 	@Autowired
 	private DisciplinaRepository dr;
+
 	
-	private int aluno = -1;
+	private Long aluno;
 	
 	@RequestMapping("/aluno/login")
 	public String loginAluno() {
@@ -38,17 +41,26 @@ public class AlunoController {
 	}
 	
 	@RequestMapping("/aluno/validar")
+	@ResponseBody
 	public String validar(@NonNull String email,@NonNull String senha) {
 		Aluno aluno = ar.findByValida(email,senha);		
 		if(aluno != null)
-			return "redirect:/aluno/?id="+aluno.getId();
+			return "success";
 		else
-			return "redirect:/aluno/login";
+			return "false";
 	}
 	
 	@RequestMapping("/aluno/")
-	public String index() {
-		return "a/index";
+	public ModelAndView index(long al) {
+		aluno = al;
+		
+		ModelAndView view = new ModelAndView("a/gerenciaAula");
+		Disciplina disciplina = rr.findDiciplina(al);
+		Iterable<Reserva> lista = rr.findAll();
+		view.addObject("lista", lista);	
+		view.addObject("diciplina", disciplina);
+		
+		return view ;
 	}
 	
 	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.GET)
@@ -58,7 +70,7 @@ public class AlunoController {
 		return view;
 	}
 	
-	@RequestMapping("/aluno/cadastraMonitoria")
+	@RequestMapping(value="/aluno/cadastraMonitoria", method = RequestMethod.GET)
 	public ModelAndView alunocadastraMonitoria() {
 		ModelAndView view = new ModelAndView("a/cadastraMonitoria");
 		
@@ -66,31 +78,24 @@ public class AlunoController {
 		view.addObject("lista", lista);	
 	
 		return view;
-	}/*
+	}
+	
+	
 	@RequestMapping(value="/aluno/cadastrarhorario",method=RequestMethod.GET)
 	public String adicionarReserva(long id) {
-		
-		DataDisponivel dd = dataD.findById(id);
-		
-		// Alterar Session
-		Aluno al = ar.findById(codmonitor);
-		
-		
-		Reserva reserva = new Reserva();
-		reserva.setCodsala(dd.getSala());
-		reserva.setCodmonitor(al);
-		reserva.setHoraIncio(dd.getInicio());
-		reserva.setHoraFim(dd.getFim());
-		reserva.setDia(dd.getDia());
 	
-		rr.save(reserva);
-		dataD.delete(dd);
-
-		String retorno;
-		retorno = "redirect:/monitor/?id=" + codmonitor;
-		return "redirect:/aluno/";
-	}*/
-	@RequestMapping(value ="/coordenandor/editarAluno", method = RequestMethod.GET)
+	   Aluno al = ar.findById(aluno);
+	   Reserva reserva = rr.findByrescodigo(7);
+	   List<Aluno> alunos = reserva.getAlunos();
+	   alunos.add(al);
+	   reserva.setAlunos(alunos);
+	   rr.save(reserva);
+	   
+		return "redirect:/aluno/?al="+aluno;
+	}
+	
+	
+	@RequestMapping(value ="/coordenador/editarAluno", method = RequestMethod.GET)
 	public ModelAndView editar(long id) {
 		ModelAndView view = new ModelAndView("c/cadastrarAluno");
 		Aluno aluno = ar.findById(id);
@@ -113,17 +118,10 @@ public class AlunoController {
 		return "redirect:/coordenador/aluno";
 	}
 	
-	@RequestMapping("/coordenandor/deletarAluno")
+	@RequestMapping("/coordenador/deletarAluno")
 	public String deletarAluno(Long id) {
 		Aluno aluno = ar.findById(id);
 		ar.delete(aluno);
 		return "redirect:/coordenador/aluno";
-	}
-	
-	@RequestMapping("/aluno/alunoCadastraMonitoria")
-	public String cadastraAlunoMonitoria(Long id) {
-		Aluno aluno = ar.findById(id);
-		ar.delete(aluno);
-		return "redirect:/aluno/cadastraMonitoria";
 	}
 }

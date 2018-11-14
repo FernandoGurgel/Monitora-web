@@ -19,6 +19,7 @@
   <thead>
     <tr>
       <th>ID</th>
+      <th>Sala </th>
       <th>Disciplina</th>
       <th>Dia da Semana</th>
       <th>Horário Inicio</th>
@@ -38,11 +39,12 @@
 						      <td>${reservas[1]}</td>
 						      <td>${reservas[2]}</td>
 						      <td>${reservas[3]}</td>
-						      <td>${reservas[4]}</td>	
+						      <td>${reservas[4]}</td>
 						      <td>${reservas[5]}</td>	
+						      <td>${reservas[6]}</td>	
 						      <td>
 						      <a role="button"
-								class="btn btn-primary" href="/monitor/cadastrarhorario?id=${reservas[0] }" title="Selecionar"> Selecionar
+								class="btn btn-primary" href="/aluno/cadastrarhorario?id=${reservas[0] }" title="Selecionar"> Selecionar
 							  </a> </td>						
 						</tr>
 	</a:forEach>	

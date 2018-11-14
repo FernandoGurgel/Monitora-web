@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class Reserva {
 
@@ -17,7 +20,6 @@ public class Reserva {
 	@OneToOne
 	private Aluno codmonitor;
 	@OneToMany
-	@JoinColumn(name="rescodigoaluno")
 	private List<Aluno> alunos;
 	@OneToOne
 	private Sala codsala;
