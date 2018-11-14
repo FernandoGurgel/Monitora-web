@@ -52,7 +52,7 @@
 							class="d-inline-block align-top" alt="">
 						<h5 class="card-title">Coordenador</h5>
 						<p class="card-text">Acesso apenas para coordenador</p>
-						<a href="coordenador/" class="btn btn-primary">Entrar</a>
+						<a href="coordenador/login" class="btn btn-primary">Entrar</a>
 					</div>
 				</div>
 

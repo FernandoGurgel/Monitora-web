@@ -10,12 +10,6 @@ import br.ifam.monitoriaweb.bean.Sala;
 @Controller
 public class LoginController {
 	
-	@RequestMapping("/login/coordenador")
-	public String coordenador() {
-		ModelAndView view = new ModelAndView("c/menuCoordenador");
-	
-		return "redirect:/coordenador/";
-	}
 	
 	@RequestMapping("/login/monitor")
 	public String monitor() {
