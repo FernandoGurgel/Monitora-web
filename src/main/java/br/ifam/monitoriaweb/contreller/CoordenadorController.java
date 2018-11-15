@@ -30,6 +30,8 @@ public class CoordenadorController {
 	@Autowired
 	private CoordenadorRepository cr;
 	
+	private String notification = "Bem-vindo";
+	
 	@RequestMapping("/coordenador/login")
 	public String login() {
 		return "c/login";
@@ -46,8 +48,10 @@ public class CoordenadorController {
 	}
 	
 	@RequestMapping("/coordenador/")
-	public String index() {
-		return "c/index";
+	public ModelAndView index() {
+		ModelAndView view = new ModelAndView("c/index");
+		view.addObject("mensagem", notification);
+		return view;
 	}
 	
 	@RequestMapping("/coordenador/aluno")
