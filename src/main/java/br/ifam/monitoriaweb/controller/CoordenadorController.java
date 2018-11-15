@@ -1,4 +1,4 @@
-package br.ifam.monitoriaweb.contreller;
+package br.ifam.monitoriaweb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
@@ -60,7 +60,7 @@ public class CoordenadorController {
 		if (notification != null) {			
 			view.addObject("mensagem", notification);
 			view.addObject("alert", 0);
-			view.addObject("icon", "<i class=\"far fa-grin-beam\"></i>");
+			view.addObject("icon","<i class='far fa-grin'></i>");
 			notification = null;
 		}
 		return view;

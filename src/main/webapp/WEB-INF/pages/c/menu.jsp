@@ -23,8 +23,6 @@ and open the template in the editor.
 	src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/static/css/estilo.css" />" />
-<script src="/static/js/bootstrap.js"></script>
-<script src="/static/js/fontawesome-all.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">

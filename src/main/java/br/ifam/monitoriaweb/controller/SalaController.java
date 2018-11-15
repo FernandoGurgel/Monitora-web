@@ -1,4 +1,4 @@
-package br.ifam.monitoriaweb.contreller;
+package br.ifam.monitoriaweb.controller;
 
 import java.util.ArrayList;
 import java.util.List;

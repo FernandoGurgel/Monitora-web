@@ -1,4 +1,4 @@
-package br.ifam.monitoriaweb.contreller;
+package br.ifam.monitoriaweb.controller;
 
 import java.util.List;
 
@@ -31,10 +31,11 @@ public class AlunoController {
 	
 	@Autowired
 	private DisciplinaRepository dr;
+	
+	private Aluno aluno;
+	private Long idAluno;
+	
 
-	
-	private Long aluno;
-	
 	@RequestMapping("/aluno/login")
 	public String loginAluno() {
 		return "a/loginAluno";
@@ -52,7 +53,7 @@ public class AlunoController {
 	
 	@RequestMapping("/aluno/")
 	public ModelAndView index(long al) {
-		aluno = al;
+		idAluno = al;
 		
 		ModelAndView view = new ModelAndView("a/gerenciaAula");
 		Disciplina disciplina = rr.findDiciplina(al);
@@ -62,13 +63,34 @@ public class AlunoController {
 		
 		return view ;
 	}
-	
+
+	// inicio do cadastro aluno
 	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.GET)
 	public ModelAndView cadastra() {
 		ModelAndView view = new ModelAndView("c/cadastrarAluno");
 		view.addObject("Titulo", "Cadastra Aluno");
-		return view;
+		if (aluno != null) {
+			view.addObject("aluno", aluno);
+			return view;			
+		}else {
+			view.addObject("mensagem", "Email ou matrícula já cadastrada! ");
+			view.addObject("icon", "<i class='fas fa-exclamation-circle'></i> ");
+			return view;
+		}
 	}
+	
+	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.POST)
+	public String cadastra(Aluno bean, int tipo) {
+		bean.setTipoaluno((tipo == 1 ? ETipo.Aluno : ETipo.Monitor));
+		if (ar.findByemail(bean.getEmail()) == null && ar.findBymatricula(bean.getMatricula()) == null ) {
+			ar.save(bean);
+			return "redirect:/coordenador/aluno";
+		} else {
+			aluno = bean;
+			return "redirect:/aluno/cadastrar";
+		}
+	}
+	// fim do cadastro aluno
 	
 	@RequestMapping(value="/aluno/cadastraMonitoria", method = RequestMethod.GET)
 	public ModelAndView alunocadastraMonitoria() {
@@ -84,14 +106,14 @@ public class AlunoController {
 	@RequestMapping(value="/aluno/cadastrarhorario",method=RequestMethod.GET)
 	public String adicionarReserva(long id) {
 	
-	   Aluno al = ar.findById(aluno);
+	   Aluno al = ar.findById(idAluno);
 	   Reserva reserva = rr.findByrescodigo(7);
 	   List<Aluno> alunos = reserva.getAlunos();
 	   alunos.add(al);
 	   reserva.setAlunos(alunos);
 	   rr.save(reserva);
 	   
-		return "redirect:/aluno/?al="+aluno;
+		return "redirect:/aluno/?al="+idAluno;
 	}
 	
 	
@@ -111,12 +133,6 @@ public class AlunoController {
 		return "redirect:/coordenador/aluno";
 	}
 	
-	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.POST)
-	public String cadastra(Aluno bean, int tipo) {
-		bean.setTipoaluno((tipo == 1 ? ETipo.Aluno : ETipo.Monitor));
-		ar.save(bean);
-		return "redirect:/coordenador/aluno";
-	}
 	
 	@RequestMapping("/coordenador/deletarAluno")
 	public String deletarAluno(Long id) {

@@ -3,6 +3,8 @@
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <div id="snackbar"></div>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/fontawesome-all.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
 	notificacao()

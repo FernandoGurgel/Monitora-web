@@ -1,4 +1,4 @@
-package br.ifam.monitoriaweb.contreller;
+package br.ifam.monitoriaweb.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
