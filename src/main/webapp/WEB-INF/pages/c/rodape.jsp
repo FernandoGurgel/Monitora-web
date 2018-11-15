@@ -2,16 +2,14 @@
 	pageEncoding="UTF-8"%>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<div id="snackbar">${mensagem}</div>
-<script src="/static/js/bootstrap.js"></script>
-<script src="/static/js/fontawesome-all.js"></script>
+<div id="snackbar"></div>
 <script type="text/javascript">
 $(document).ready(function(){
 	notificacao()
 })
 function notificacao(){
-    var x = $('#snackbar').text($('#snackbar').text());    
-    switch(0){
+    var x = $('#snackbar').html("${icon} "+"${mensagem}");    
+    switch(${alert}){
         case 0:{
             x.toggleClass("alert alert-success show");
             setTimeout(function(){ x.toggleClass("alert alert-success show"); }, 3000);

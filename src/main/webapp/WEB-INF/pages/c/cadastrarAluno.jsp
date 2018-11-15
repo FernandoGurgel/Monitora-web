@@ -20,10 +20,9 @@
 						<label class="col control-label" for="idNome">Nome</label>
 						<div class="col">
 							<input id="idNome" name="nome" type="text"
-								placeholder="Nome do usuário"
-								pattern="[A-Za-z\s]+$" title="Nome inválido, este campo não aceita caracteres especiais  !"
-								class="form-control input-md"
-								required value="${aluno.nome}">
+								placeholder="Nome do usuário" pattern="[A-Za-z\s]+$"
+								title="Nome inválido, este campo não aceita caracteres especiais  !"
+								class="form-control input-md" required value="${aluno.nome}">
 
 						</div>
 					</div>
@@ -34,8 +33,8 @@
 							<label class="col control-label" for="idDepto">Matricula</label>
 							<div class="col">
 								<input id="idMatricula" name="matricula" type="text"
-									placeholder="Número de Matriucula"
-									pattern="[0-9]+$" title="Matrícula inválido, este campo aceita apenas números !"
+									placeholder="Número de Matriucula" pattern="[0-9]+$"
+									title="Matrícula inválido, este campo aceita apenas números !"
 									class="form-control input-md" value="${aluno.matricula}"
 									required>
 
@@ -43,21 +42,22 @@
 						</div>
 
 						<!-- combobox curso-->
-						 <div class="form-group col-md-4">
-      <label for="curso">Curso</label>
-      <select id="curso" name="curso" class="form-control">
-        <option selected></option>
-        <option value="tads"> Tecnologia em Analise e Desenvolvimento de Sistemas</option>
-        <option value="mat"> Licenciatura Matamática </option>
-        <option value="bio"> Licenciatura Biologia</option>
-        <option value="fis"> Licenciatura Fisica</option>
-        <option value="pub"> Tecnologia em Publicidade </option>
-        <option value="engm"> Engenharia Mecânica</option>
-        <option value="engc"> Engenharia Civil</option>
-        <option value="amb"> Tecnologia em Meio Ambiente</option>
-        
-      </select>
-    </div>
+						<div class="form-group col-md-4">
+							<label for="curso">Curso</label> <select id="curso" name="curso"
+								class="form-control">
+								<option selected></option>
+								<option value="tads">Tecnologia em Analise e
+									Desenvolvimento de Sistemas</option>
+								<option value="mat">Licenciatura Matamática</option>
+								<option value="bio">Licenciatura Biologia</option>
+								<option value="fis">Licenciatura Fisica</option>
+								<option value="pub">Tecnologia em Publicidade</option>
+								<option value="engm">Engenharia Mecânica</option>
+								<option value="engc">Engenharia Civil</option>
+								<option value="amb">Tecnologia em Meio Ambiente</option>
+
+							</select>
+						</div>
 					</div>
 
 					<!-- TEXTO-->
@@ -100,8 +100,8 @@
 						<label class="col-md-4 control-label" for="idConfirmar"></label>
 						<div class="col-md-8">
 							<button id="idConfirmar" name="idConfirmar"
-								class="btn btn-primary" type="submit">Confirmar</button>
-							<button id="idCancelar" class="btn btn-danger" type="reset">Limpar</button>
+								class="btn btn-primary" type="submit"><i class="far fa-save"></i> Confirmar</button>
+							<button id="idCancelar" class="btn btn-danger" type="reset"><i class="far fa-window-close"></i> Limpar</button>
 						</div>
 					</div>
 

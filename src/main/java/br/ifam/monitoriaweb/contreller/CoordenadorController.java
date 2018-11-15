@@ -29,28 +29,40 @@ public class CoordenadorController {
 	private DataDisponivelRepository dd;
 	@Autowired
 	private CoordenadorRepository cr;
-	
+	private long id = 0;
 	private String notification = "Bem-vindo";
 	
 	@RequestMapping("/coordenador/login")
-	public String login() {
-		return "c/login";
+	public ModelAndView login() {
+		ModelAndView view = new ModelAndView("c/login");
+		if(id == -1) {
+			view.addObject("mensagem", "Login ou Senha invalida!");
+			view.addObject("icon", "<i class='far fa-frown'></i>");
+			view.addObject("alert", 1);
+		}
+		return view;
 	}
 	
 	@RequestMapping("/coordenador/validar")
-	@ResponseBody
 	public String validar(@NonNull String email,@NonNull String senha) {
-		Coordenador co = cr.findByValida(email,senha);		
-		if(co != null)
-			return "success";
-		else
-			return "false";
+		Coordenador co = cr.findByValida(email,senha);
+		id = (co != null ? co.getId():-1 );
+		if(id != -1)
+			return "redirect:/coordenador/?id="+co.getId();
+		else {
+			return "redirect:/coordenador/login";
+		}
 	}
 	
 	@RequestMapping("/coordenador/")
 	public ModelAndView index() {
 		ModelAndView view = new ModelAndView("c/index");
-		view.addObject("mensagem", notification);
+		if (notification != null) {			
+			view.addObject("mensagem", notification);
+			view.addObject("alert", 0);
+			view.addObject("icon", "<i class=\"far fa-grin-beam\"></i>");
+			notification = null;
+		}
 		return view;
 	}
 	
