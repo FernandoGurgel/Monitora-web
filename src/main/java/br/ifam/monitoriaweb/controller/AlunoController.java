@@ -32,7 +32,7 @@ public class AlunoController {
 	@Autowired
 	private DisciplinaRepository dr;
 	
-	private Aluno aluno;
+	private Aluno aluno = null;
 	private Long idAluno;
 	
 
@@ -70,13 +70,14 @@ public class AlunoController {
 		ModelAndView view = new ModelAndView("c/cadastrarAluno");
 		view.addObject("Titulo", "Cadastra Aluno");
 		if (aluno != null) {
-			view.addObject("aluno", aluno);
-			return view;			
-		}else {
 			view.addObject("mensagem", "Email ou matrícula já cadastrada! ");
 			view.addObject("icon", "<i class='fas fa-exclamation-circle'></i> ");
+			view.addObject("alert", 1);
+			view.addObject("aluno", aluno);
+			return view;			
+		}else 
 			return view;
-		}
+		
 	}
 	
 	@RequestMapping(value ="/aluno/cadastrar", method = RequestMethod.POST)

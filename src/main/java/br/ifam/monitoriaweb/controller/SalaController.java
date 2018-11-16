@@ -26,6 +26,33 @@ public class SalaController {
 	@Autowired
 	private DataDisponivelRepository data;
 	
+	private Sala sala = null;
+	
+	// begin add class
+	@RequestMapping(value="/sala/addSala", method=RequestMethod.GET)
+	public ModelAndView addSala() {
+		ModelAndView view = new ModelAndView("c/cadastrarSala");
+		view.addObject("titulo", "Cadastrar Sala");
+		if(sala != null) {
+			view.addObject("sala", sala);
+			view.addObject("mensagem", "Nome da sala já existe! ");
+			view.addObject("icon", "<i class='fas fa-exclamation-circle'></i> ");
+			view.addObject("alert", 2);
+		}
+		return view;
+	}
+	
+	@RequestMapping(value="/sala/addSala", method=RequestMethod.POST)
+	public String addSala(Sala sala) {
+		if (sr.findBynome(sala.getNome()) != null) {
+			this.sala = sala;
+			return "redirect:/sala/addSala";
+		}
+		sr.save(sala);
+		return "redirect:/coordenador/sala";
+	}
+	// end add class
+	
 	@RequestMapping(value="/sala/Editar",method=RequestMethod.GET)
 	public ModelAndView editarHorario(long codsala) {
 		ModelAndView view = new ModelAndView("c/cadastrarHorario");
@@ -49,11 +76,6 @@ public class SalaController {
 		return view;
 	}
 	
-	@RequestMapping(value="/sala/salvar",method=RequestMethod.POST)
-	public String salvar() {
-		data.saveAll(horario);
-		return "redirect:/coordenador/sala";
-	}
 	
 	@RequestMapping(value="/sala/addHorario", method=RequestMethod.POST)
 	@ResponseBody
@@ -65,18 +87,13 @@ public class SalaController {
 		return "{'success'}";
 	}
 	
-	@RequestMapping(value="/sala/addSala", method=RequestMethod.GET)
-	public ModelAndView addSala() {
-		ModelAndView view = new ModelAndView("c/cadastrarSala");
-		view.addObject("titulo", "Cadastrar Sala");
-		return view;
-	}
 	
-	@RequestMapping(value="/sala/addSala", method=RequestMethod.POST)
-	public String addSala(Sala sala) {
-		sr.save(sala);
+	@RequestMapping(value="/sala/salvar",method=RequestMethod.POST)
+	public String salvar() {
+		data.saveAll(horario);
 		return "redirect:/coordenador/sala";
 	}
+	
 	
 	@RequestMapping("/sala/excluirSala")
 	public String excluir(long codsala) {

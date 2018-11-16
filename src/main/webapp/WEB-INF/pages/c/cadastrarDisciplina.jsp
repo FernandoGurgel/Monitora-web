@@ -58,8 +58,9 @@
 						<input type="date" class="form-control" name="dataFim" value="${disciplina.dataFim}" min="2018-01-01" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" required>
 					</div>					
 				</div>
-				<button class="btn btn-primary" type="submit">Cadastrar</button>
-				<a class="btn btn-danger" href="/coordenador/" role="button">Cancelar</a>
+				<button id="idConfirmar" name="idConfirmar"
+								class="btn btn-primary" type="submit"><i class="far fa-save"></i> Confirmar</button>
+				<a class="btn btn-danger" href="/coordenador/?id=id" role="button"><i class="far fa-window-close"></i> Cancelar</a>
 			</form>
 		</div>
 	</div>

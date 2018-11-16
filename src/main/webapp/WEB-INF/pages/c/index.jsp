@@ -10,7 +10,7 @@
 					<div class="card-body">
 						<img src="/static/img/estudante.png" width="30" height="30"
 							class="d-inline-block align-top" alt="">
-						<h5 class="card-title">Gerenciar Aluno</h5>
+						<h5 class="card-title">${id } Gerenciar Aluno</h5>
 						<p class="card-text">Aluno Cadastrar, Vizualizar, Editar e
 							Excluir</p>
 						<a href="aluno" class="btn btn-primary">Entrar</a>

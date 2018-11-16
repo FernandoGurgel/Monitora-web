@@ -11,5 +11,7 @@ public interface DisciplinaRepository extends CrudRepository<Disciplina, String>
 
 	@Query("SELECT d FROM Disciplina d WHERE aluno_id = ?1")
 	Disciplina findByaluno(long aluno);
+
+	Disciplina findBynome(String nome);
 	
 }

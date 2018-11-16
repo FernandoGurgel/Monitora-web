@@ -26,36 +26,51 @@ public class DisciplinaController {
 	private DisciplinaRepository em;
 	@Autowired
 	private AlunoRepository al;	
+	private Disciplina dis = null;
 	
-	
-
-	
+	// cadastra disciplina
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView view = new ModelAndView("c/cadastrarDisciplina");
+		view.addObject("titulo", "Cadastrar Disciplina");
 		
 		List<Aluno> alunos = new ArrayList<>();
 		Iterable<Aluno> lista = al.findAll();
 		for(Aluno a : lista) {
-			if(a.getTipoaluno() == ETipo.Monitor.toString())
-				alunos.add(a);
+			if(a.getTipoaluno() == ETipo.Monitor.toString()) {
+				if (em.findByaluno(a.getId()) == null)
+					alunos.add(a);
+			}
 		}
 		
-		view.addObject("Monitor",lista);
+		view.addObject("Monitor",alunos);
+		if(alunos.size() == 0) {
+			view.addObject("mensagem", "Sistema sem monitor disponível! ");
+			view.addObject("icon", "<i class='fas fa-exclamation-circle'></i> ");
+			view.addObject("alert", 2);
+		} else if (dis != null) {
+			view.addObject("mensagem", "Disciplina já cadastrada! ");
+			view.addObject("icon", "<i class='fas fa-times'></i> ");
+			view.addObject("alert", 1);
+			view.addObject("disciplina", dis);
+		}
 		
-		view.addObject("titulo", "Cadastrar Disciplina");
 		return view;
 	}
 	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.POST)
 	public String cadastrar(Disciplina disciplina, long codAluno) {
-		Aluno bean = al.findById(codAluno);
-		disciplina.setAluno(bean);
-//		disciplina.setDataFim(fim);
-//		disciplina.setDataInicio(inicio);
-		em.save(disciplina);
-		return "redirect:/coordenador/disciplina";
+		if( em.findBynome(disciplina.getNome()) != null) {
+			dis = disciplina;
+			return"redirect:/disciplina/cadastrar";
+		}else {			
+			Aluno bean = al.findById(codAluno);
+			disciplina.setAluno(bean);
+			em.save(disciplina);
+			return "redirect:/coordenador/disciplina";			
+		}
 	}
+	// fim cadastra disciplina
 	
 	@RequestMapping(value="/disciplina/editar", method = RequestMethod.GET)
 	public ModelAndView editar(long id) {
