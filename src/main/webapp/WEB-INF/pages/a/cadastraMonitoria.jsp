@@ -19,9 +19,8 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Disciplina</th>
-      <th>Monitor</th>
       <th>Sala </th>
+      <th>Disciplina</th>
       <th>Dia da Semana</th>
       <th>Horário Inicio</th>
       <th>Horário Fim</th>
@@ -33,33 +32,19 @@
 
   <!--Table body-->
   <tbody>
-  
-
     <tr>
     <a:forEach var="reservas" items="${lista}">
 				    	<tr>
-						      <td scope="row">${reservas.id}</th><th>
-							 <a:forEach var="disciplina" items="${listaD }">
-									<a:if test="${disciplina.aluno.nome eq reservas.monitor}">
-										${disciplina.nome}
-									</a:if>
-							  </a:forEach>
-							  </td>
-						      <td>${reservas.monitor}</td>
-						      <td>${reservas.sala}</td>
-						      <td>${reservas.diaSemana}</td>
-						      <td>${reservas.horaInicio}</td>	
-						      <td>${reservas.horaFim}</td>	
-						      <td>
-							 <a:forEach var="disciplina" items="${listaD }">
-									<a:if test="${disciplina.aluno.nome eq reservas.monitor}">
-										${disciplina.qtdVagas}
-									</a:if>
-							  </a:forEach>
-							  </td>
+						      <th scope="row">${reservas[0]}</th>
+						      <td>${reservas[1]}</td>
+						      <td>${reservas[2]}</td>
+						      <td>${reservas[3]}</td>
+						      <td>${reservas[4]}</td>
+						      <td>${reservas[5]}</td>	
+						      <td>${reservas[6]}</td>	
 						      <td>
 						      <a role="button"
-								class="btn btn-primary" href="/aluno/cadastrarhorario?id=${reservas.id }" title="Selecionar"> Sair
+								class="btn btn-primary" href="/aluno/cadastrarhorario?id=${reservas[0] }" title="Selecionar"> Selecionar
 							  </a> </td>						
 						</tr>
 	</a:forEach>	

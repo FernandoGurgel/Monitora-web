@@ -15,17 +15,16 @@
 					
 				<h4>${disciplina.nome}</h4>  			
            
+				<div class="col-2">Horários: 0/6</div>
+				
 				<div class="col-3 my-4 ">
-				  <a
-						href="adicionarHorario">
-				  <button name ="jfs" id = "jfs" type="button" class="btn btn-success">
-			    		<span class="fas fa-plus"></span> Adicionar Novo Horário
-			  	  </button>
+					<a class="btn btn-success"
+						href="adicionarHorario"><i class="fas fa-plus"></i> Adicionar Novo Horário
 					</a>
 				</div>
 			</div>
         
-			<m:set var = "horariosInscritos" value = "0"/>
+
               <!--Table-->
               
 			<div class="container">
@@ -52,11 +51,8 @@
 
 					  <tbody>
 					  
-						  <m:forEach var="reservas" items="${lista}" varStatus="rateLoop">
-
-			
+						  <m:forEach var="reservas" items="${lista}">
 						   <m:if test="${reservas.codmonitor.id eq monitoria}">
-						   	<m:set var = "horariosInscritos" value = "${horariosInscritos + 1}"/>
 					    	<tr>
 
 							      <th scope="row">${reservas.rescodigo}</th>
@@ -85,22 +81,7 @@
 					</table>
     		</div>
 		</div>
-	    <script>document.getElementById("jfs").disabled = false;</script>
 		</div>
-			<h4>Horários Cadastrados: 
-			<m:choose>
-				 <m:when test="${horariosInscritos == 0}">
-					<m:out value = "00/06"/>
-			     </m:when>
-				 <m:when test="${horariosInscritos >= 6}">
-					<m:out value = "06/06"/>
-				    <script>document.getElementById("jfs").disabled = true;</script>
-			     </m:when>
-			     <m:otherwise>
-			     	<m:out value = "0${horariosInscritos}/06"/>
-			     </m:otherwise>
-			</m:choose>
-			</h4>
 	</div>
 </div>
 <jsp:include page="rodape.jsp"></jsp:include>
