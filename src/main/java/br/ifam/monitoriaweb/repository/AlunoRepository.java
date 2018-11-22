@@ -17,4 +17,5 @@ public interface AlunoRepository extends CrudRepository<Aluno, String>{
 	Aluno findByemail(String email);
 
 	Aluno findBymatricula(String matricula);
+
 }

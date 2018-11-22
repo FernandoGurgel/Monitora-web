@@ -1,5 +1,7 @@
 package br.ifam.monitoriaweb.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.ifam.monitoriaweb.bean.Aluno;
+import br.ifam.monitoriaweb.bean.Coordenador;
 import br.ifam.monitoriaweb.bean.DataDisponivel;
 import br.ifam.monitoriaweb.bean.Disciplina;
 import br.ifam.monitoriaweb.bean.ETipo;
@@ -35,32 +38,58 @@ public class AlunoController {
 	private Aluno aluno = null;
 	private Long idAluno;
 	
-
+	private long id = 0;
+	private String notification = "Bem-vindo";
+	
 	@RequestMapping("/aluno/login")
-	public String loginAluno() {
-		return "a/loginAluno";
+	public ModelAndView loginAluno() {
+		ModelAndView view = new ModelAndView("a/loginAluno");
+		if(id == -1) {
+			view.addObject("mensagem", "Login ou Senha invalida!");
+			view.addObject("icon", "<i class='far fa-frown'></i>");
+			view.addObject("alert", 1);
+		}
+		return view;
 	}
 	
 	@RequestMapping("/aluno/validar")
-	@ResponseBody
 	public String validar(@NonNull String email,@NonNull String senha) {
-		Aluno aluno = ar.findByValida(email,senha);		
-		if(aluno != null)
-			return "success";
+		Aluno aluno = ar.findByValida(email,senha);	
+		id = aluno != null ? aluno.getId():-1;
+		if(id != -1)
+			return "redirect:/aluno/?al="+aluno.getId();
 		else
-			return "false";
+			return "redirect:/aluno/login";
 	}
 	
 	@RequestMapping("/aluno/")
 	public ModelAndView index(long al) {
-		idAluno = al;
-		
+
 		ModelAndView view = new ModelAndView("a/gerenciaAula");
-		Disciplina disciplina = rr.findDiciplina(al);
-		Iterable<Reserva> lista = rr.findAll();
-		view.addObject("lista", lista);	
-		view.addObject("diciplina", disciplina);
+		idAluno = al;
+		ArrayList<Reserva> re = new ArrayList<Reserva>();
+
+		if (notification != null) {			
+			view.addObject("mensagem", notification);
+			view.addObject("alert", 0);
+			view.addObject("icon","<i class='far fa-grin'></i>");
+			notification = null;
+		}
 		
+		List<Reserva> reserva = rr.findAllReservas();
+		for(Reserva r : reserva) {
+			  
+			List<Aluno> alunos = r.getAlunos();
+			
+			for(Aluno a : alunos) {
+				if(a.getId() == idAluno) {
+					re.add(r);
+				}
+			};
+		}
+		view.addObject("lista", re);
+		Iterable<Disciplina> ds = dr.findAll();
+		view.addObject("listaD", ds);
 		return view ;
 	}
 
@@ -97,9 +126,44 @@ public class AlunoController {
 	public ModelAndView alunocadastraMonitoria() {
 		ModelAndView view = new ModelAndView("a/cadastraMonitoria");
 		
-		Iterable<Reserva> lista = rr.findByMonitorDisciplina();
-		view.addObject("lista", lista);	
-	
+		boolean entrou = false;
+
+		ArrayList<HashMap<String, String>> re = new ArrayList<HashMap<String, String>>();
+		HashMap<String, String> hashMap = new HashMap<String, String>();
+		
+		List<Reserva> reserva = rr.findAllReservas();
+		int i = 0;
+		for(Reserva r : reserva) {
+
+			entrou = false;
+			List<Aluno> alunos = r.getAlunos();
+			
+			for(Aluno a : alunos) {
+				if(a.getId() == idAluno) {
+					entrou = true;
+				}
+			};
+			if(!entrou) {
+				System.out.println(r.getRescodigo());
+				hashMap.put("id", ""+r.getRescodigo());
+				hashMap.put("sala", r.getCodsala().getNome());
+				hashMap.put("monitor", r.getCodmonitor().getNome());
+				hashMap.put("diaSemana", r.getDia());
+				hashMap.put("horaInicio", r.getHoraIncio());
+				hashMap.put("horaFim", r.getHoraFim());
+				re.add(hashMap);
+			}
+	        for (String key : hashMap.keySet()) {
+	            
+	            //Capturamos o valor a partir da chave
+	            String value = hashMap.get(key);
+	            System.out.println(key + " = " + value);
+	        }
+		}
+        
+		view.addObject("lista", re);	
+		Iterable<Disciplina> ds = dr.findAll();
+		view.addObject("listaD", ds);	
 		return view;
 	}
 	
@@ -108,13 +172,29 @@ public class AlunoController {
 	public String adicionarReserva(long id) {
 	
 	   Aluno al = ar.findById(idAluno);
-	   Reserva reserva = rr.findByrescodigo(7);
-	   List<Aluno> alunos = reserva.getAlunos();
+	   
+	   Reserva reserva = rr.findByrescodigo(id);
+	   List<Aluno> alunos = rr.findAllAlunosReserva(id);
 	   alunos.add(al);
 	   reserva.setAlunos(alunos);
 	   rr.save(reserva);
 	   
-		return "redirect:/aluno/?al="+idAluno;
+	   return "redirect:/aluno/?al="+idAluno;
+	}
+	
+	
+	@RequestMapping(value="/aluno/sairhorario",method=RequestMethod.GET)
+	public String SairReserva(long id) {
+	
+	   Aluno al = ar.findById(idAluno);
+	   
+	   Reserva reserva = rr.findByrescodigo(id);
+	   List<Aluno> alunos = rr.findAllAlunosReserva(id);
+	   alunos.remove(al);
+	   reserva.setAlunos(alunos);
+	   rr.save(reserva);
+	   
+	   return "redirect:/aluno/?al="+idAluno;
 	}
 	
 	

@@ -55,8 +55,8 @@ public class SalaController {
 	
 	@RequestMapping(value="/sala/Editar",method=RequestMethod.GET)
 	public ModelAndView editarHorario(long codsala) {
-		ModelAndView view = new ModelAndView("c/verHorario");
-		view.addObject("titulo", "Horário sala");
+		ModelAndView view = new ModelAndView("c/cadastrarHorario");
+		view.addObject("titulo", "Editar Horário");
 		Sala sala = sr.findBycodsala(codsala);
 		horario = data.findBySala(sala);
 		view.addObject("sala", sala );
