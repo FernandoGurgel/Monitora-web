@@ -28,7 +28,7 @@
 						
 						 <div class="dropdown-menu">
       <a class="dropdown-item" href="coordenador/login">Coordenador</a>
-      <a class="dropdown-item" href="monitor/">Monitor</a>
+      <a class="dropdown-item" href="monitor/login">Monitor</a>
       <a class="dropdown-item" href="aluno/login">Aluno</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="contato/">Entrar em Contato</a>

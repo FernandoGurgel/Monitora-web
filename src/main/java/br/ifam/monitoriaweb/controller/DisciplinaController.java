@@ -93,8 +93,8 @@ public class DisciplinaController {
 	}
 	
 	@RequestMapping(value="/disciplina/editar", method= RequestMethod.POST)
-	public String editar(Disciplina disciplina, String nomeAluno) {
-		Aluno bean = al.findByNome(nomeAluno);
+	public String editar(Disciplina disciplina, long codAluno) {
+		Aluno bean = al.findById(codAluno);
 		disciplina.setAluno(bean);
 		em.save(disciplina);
 		return "redirect:/coordenador/disciplina";

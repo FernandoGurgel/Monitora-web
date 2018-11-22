@@ -16,6 +16,7 @@
 		<div class="col-12">
 
 			<form class="form-horizontal " method="post">
+				<input type="hidden" name="id" value="${disciplina.id }">
 				<div class="form-group">
 					<label for="nomeDisciplina">Nome:</label> 
 					<input type="text" class="form-control col" name="nome" id="nomedisciplina"
@@ -41,13 +42,9 @@
 				<div class="form-row">
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Quantidade de Vagas</label> 
-						<select
+						<input
 							class="form-control col" name="qtdVagas"
-							id="CBvagasDisciplina" disabled required>
-
-						
-							<option selected value="12">12</option>
-						</select>
+							id="CBvagasDisciplina" disabled value="12"/>
 					</div>
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Data Inicio</label>

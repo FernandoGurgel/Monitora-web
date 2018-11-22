@@ -38,9 +38,18 @@ public class AlunoController {
 	private Aluno aluno = null;
 	private Long idAluno;
 	
-	private long id = 0;
-	private String notification = "Bem-vindo";
+	private long id;
+	private String notification;
 	
+	
+	
+	public AlunoController() {
+		this.aluno = null;
+		this.idAluno = 0l;
+		this.id = 0;
+		this.notification = "Bem-vindo";
+	}
+
 	@RequestMapping("/aluno/login")
 	public ModelAndView loginAluno() {
 		ModelAndView view = new ModelAndView("a/loginAluno");
@@ -103,6 +112,7 @@ public class AlunoController {
 			view.addObject("icon", "<i class='fas fa-exclamation-circle'></i> ");
 			view.addObject("alert", 1);
 			view.addObject("aluno", aluno);
+			aluno = null;
 			return view;			
 		}else 
 			return view;

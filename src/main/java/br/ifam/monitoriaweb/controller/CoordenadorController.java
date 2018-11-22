@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import br.ifam.monitoriaweb.bean.Aluno;
 import br.ifam.monitoriaweb.bean.Coordenador;
@@ -29,9 +28,15 @@ public class CoordenadorController {
 	private DataDisponivelRepository dd;
 	@Autowired
 	private CoordenadorRepository cr;
-	private long id = 0;
-	private String notification = "Bem-vindo";
 	
+	private long id;
+	private String notification;
+	
+	public CoordenadorController() {
+		this.id = 0;
+		this.notification = "Bem-vindo";
+	}
+
 	@RequestMapping("/coordenador/login")
 	public ModelAndView login() {
 		ModelAndView view = new ModelAndView("c/login");
@@ -57,11 +62,10 @@ public class CoordenadorController {
 	@RequestMapping("/coordenador/")
 	public ModelAndView index() {
 		ModelAndView view = new ModelAndView("c/index");
-		if (notification != null) {			
+		if (id != -1) {			
 			view.addObject("mensagem", notification);
 			view.addObject("alert", 0);
 			view.addObject("icon","<i class='far fa-grin'></i>");
-			notification = null;
 		}
 		return view;
 	}
