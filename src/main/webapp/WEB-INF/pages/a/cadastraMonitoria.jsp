@@ -53,14 +53,36 @@
 						      <td>
 							 <a:forEach var="disciplina" items="${listaD }">
 									<a:if test="${disciplina.aluno.nome eq reservas.monitor}">
-										${disciplina.qtdVagas}
+									 	${disciplina.qtdVagas}
+										<a:choose>
+											<a:when test="${disciplina.qtdVagas == 0}">
+
+													<a:set var = "infoButton" value = "1"/>
+
+											</a:when>
+											<a:otherwise>
+												<a:set var = "infoButton" value = "0"/>
+												
+											</a:otherwise>
+											
+										</a:choose>
+										
 									</a:if>
 							  </a:forEach>
 							  </td>
-						      <td>
-						      <a role="button"
-								class="btn btn-primary" href="/aluno/cadastrarhorario?id=${reservas.id }" title="Selecionar"> Sair
-							  </a> </td>						
+							   <td>
+											<a:choose>
+											<a:when test="${infoButton == 1}">
+												 <a  href="/aluno/cadastrarhorario?id=${reservas.id }"><button type="button" id="jfs" name="jfs" disabled="disabled" class="btn btn-success">Selecionar</button>
+																		      </a> 	
+											</a:when>
+											<a:otherwise>
+												 <a  href="/aluno/cadastrarhorario?id=${reservas.id }"><button type="button" id="jfs" name="jfs" class="btn btn-success">Selecionar</button>
+																		      </a> 												
+											</a:otherwise>
+											
+										</a:choose>						   
+						       </td>		
 						</tr>
 	</a:forEach>	
 	

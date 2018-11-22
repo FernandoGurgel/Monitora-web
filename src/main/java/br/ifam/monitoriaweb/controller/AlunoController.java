@@ -38,18 +38,9 @@ public class AlunoController {
 	private Aluno aluno = null;
 	private Long idAluno;
 	
-	private long id;
-	private String notification;
+	private long id = 0;
+	private String notification = "Bem-vindo";
 	
-	
-	
-	public AlunoController() {
-		this.aluno = null;
-		this.idAluno = 0l;
-		this.id = 0;
-		this.notification = "Bem-vindo";
-	}
-
 	@RequestMapping("/aluno/login")
 	public ModelAndView loginAluno() {
 		ModelAndView view = new ModelAndView("a/loginAluno");
@@ -112,7 +103,6 @@ public class AlunoController {
 			view.addObject("icon", "<i class='fas fa-exclamation-circle'></i> ");
 			view.addObject("alert", 1);
 			view.addObject("aluno", aluno);
-			aluno = null;
 			return view;			
 		}else 
 			return view;
@@ -154,6 +144,7 @@ public class AlunoController {
 				}
 			};
 			if(!entrou) {
+				HashMap<String, String> hashMap = new HashMap<String, String>();
 				System.out.println(r.getRescodigo());
 				hashMap.put("id", ""+r.getRescodigo());
 				hashMap.put("sala", r.getCodsala().getNome());
@@ -163,12 +154,6 @@ public class AlunoController {
 				hashMap.put("horaFim", r.getHoraFim());
 				re.add(hashMap);
 			}
-	        for (String key : hashMap.keySet()) {
-	            
-	            //Capturamos o valor a partir da chave
-	            String value = hashMap.get(key);
-	            System.out.println(key + " = " + value);
-	        }
 		}
         
 		view.addObject("lista", re);	
