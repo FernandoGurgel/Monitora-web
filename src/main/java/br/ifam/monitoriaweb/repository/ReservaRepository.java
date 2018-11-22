@@ -12,6 +12,7 @@ import br.ifam.monitoriaweb.bean.Reserva;
 
 public interface ReservaRepository extends CrudRepository<Reserva, String>{
 
+
 	Reserva findByrescodigo(long rescodigo);
 
 	@Query(" SELECT r.rescodigo, s.nome, d.nome, r.dia, r.horaIncio, r.horaFim, d.qtdVagas FROM Reserva r " + 
@@ -28,10 +29,24 @@ public interface ReservaRepository extends CrudRepository<Reserva, String>{
 			" inner join Aluno a on r.codmonitor = a.id " 
 			+ " INNER JOIN Disciplina d on a.id = aluno_id" 
 			)
+	
 	Disciplina findDiciplina(long al);
 	
 	
-	
-	
+	@Query(" SELECT a FROM Reserva r " + 
+				" inner join Aluno a on r.codmonitor = a.id where rescodigo = ?1"
+	)
+	List<Aluno> findAllAlunosReserva(long id);
+
+	@Query(" SELECT d.nome, s.nome, r.horaIncio, r.horaFim, r.dia FROM Reserva r " + 
+			" inner join Aluno a on r.codmonitor = a.id"
+			+ " INNER JOIN Disciplina d on a.id = aluno_id"
+			+ " INNER JOIN Sala s on s.codsala = r.codsala"
+			+ "		WHERE a.id = ?1" 
+	)
+	List<Aluno> findAlunoMonitoria(long id);
+
+	@Query("SELECT r FROM Reserva r ")
+	List<Reserva>  findAllReservas();
 
 }
