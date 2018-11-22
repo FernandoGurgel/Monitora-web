@@ -15,8 +15,11 @@ and open the template in the editor.
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- css, js, e outros componentes para estilizar a pagina index -->
-
+<!-- FONTE API GOOGLE -->
+<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 <!-- Bootstrap core CSS -->
+
+
 <link rel="stylesheet"
 	href="<c:url value="/static/vendor/bootstrap/css/bootstrap.min.css" />">
 
@@ -44,7 +47,7 @@ and open the template in the editor.
 <!-- fim  -->
 
 
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <link rel="stylesheet"
 	href="<c:url value="/static/css/bootstrap.min.css" />">

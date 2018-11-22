@@ -20,6 +20,11 @@ public class indexController {
 	public String contato() {
 		return "co/contato";
 	}
+	
+	@RequestMapping("/fac/")
+	public String fac() {
+		return "fac";
+	}
 
 	@RequestMapping("/coordenador")
 	public String coordenador() {
