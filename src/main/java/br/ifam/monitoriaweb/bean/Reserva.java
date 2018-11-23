@@ -20,7 +20,7 @@ public class Reserva {
 	private long rescodigo;
 	@OneToOne
 	private Aluno codmonitor;
-	@ManyToMany 
+	@ManyToMany
 	private List<Aluno> alunos;
 	@OneToOne
 	private Sala codsala;

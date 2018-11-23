@@ -129,7 +129,7 @@ public class AlunoController {
 		boolean entrou = false;
 
 		ArrayList<HashMap<String, String>> re = new ArrayList<HashMap<String, String>>();
-		HashMap<String, String> hashMap = new HashMap<String, String>();
+
 		
 		List<Reserva> reserva = rr.findAllReservas();
 		int i = 0;
@@ -144,6 +144,7 @@ public class AlunoController {
 				}
 			};
 			if(!entrou) {
+				HashMap<String, String> hashMap = new HashMap<String, String>();
 				System.out.println(r.getRescodigo());
 				hashMap.put("id", ""+r.getRescodigo());
 				hashMap.put("sala", r.getCodsala().getNome());
@@ -153,12 +154,6 @@ public class AlunoController {
 				hashMap.put("horaFim", r.getHoraFim());
 				re.add(hashMap);
 			}
-	        for (String key : hashMap.keySet()) {
-	            
-	            //Capturamos o valor a partir da chave
-	            String value = hashMap.get(key);
-	            System.out.println(key + " = " + value);
-	        }
 		}
         
 		view.addObject("lista", re);	
