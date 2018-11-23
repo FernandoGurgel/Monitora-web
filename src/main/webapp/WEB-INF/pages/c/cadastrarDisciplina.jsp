@@ -42,9 +42,7 @@
 				<div class="form-row">
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Quantidade de Vagas</label> 
-						<input
-							class="form-control col" name="qtdVagas"
-							id="CBvagasDisciplina" disabled value="12"/>
+						<input type="number" class="form-control col" name="qtdVagas" id="CBvagasDisciplina" value="12" disabled="disabled"/>
 					</div>
 					<div class="form-group col">
 						<label for="CBvagasDisciplina">Data Inicio</label>

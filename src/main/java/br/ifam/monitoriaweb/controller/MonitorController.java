@@ -97,12 +97,12 @@ public class MonitorController {
 	
 	@RequestMapping(value="/monitor/addreserva",method=RequestMethod.GET)
 	public String adicionarReserva(long id) {
-		
+		System.out.println(">>>>>>>>>>>>as >>>"+id);
 		DataDisponivel dd = dataD.findById(id);
 		
 		// Alterar Session
-		Aluno al = ar.findById(id);
-		
+		Aluno al = ar.findById(monitor.getId());
+		System.out.println(al.getId());
 		
 		Reserva reserva = new Reserva();
 		reserva.setCodsala(dd.getSala());
