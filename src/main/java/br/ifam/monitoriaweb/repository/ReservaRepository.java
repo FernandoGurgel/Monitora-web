@@ -12,7 +12,6 @@ import br.ifam.monitoriaweb.bean.Reserva;
 
 public interface ReservaRepository extends CrudRepository<Reserva, String>{
 
-
 	Reserva findByrescodigo(long rescodigo);
 
 	@Query(" SELECT r.rescodigo, s.nome, d.nome, r.dia, r.horaIncio, r.horaFim, d.qtdVagas FROM Reserva r " + 
@@ -48,5 +47,4 @@ public interface ReservaRepository extends CrudRepository<Reserva, String>{
 
 	@Query("SELECT r FROM Reserva r ")
 	List<Reserva>  findAllReservas();
-
 }

@@ -4,7 +4,7 @@ $('body').on('click', 'button.remove-item', function() {
 	var cod = $(this).val();
 	jQuery.ajax({
 		type:"GET",
-		url: "http://13.82.130.246:8080/api/horarioremove?id="+cod,
+		url: "http://localhost:8080/api/horarioremove?id="+cod,
 		success: function(){
 			$(".addDia > tr").remove();
 			carregar();
@@ -20,7 +20,7 @@ $(document).ready(function(){
 		var fim = $("select[name=fim]").val();
 		jQuery.ajax({
 			type:"POST",
-			url: "http://13.82.130.246:8080/sala/addHorario",
+			url: "http://localhost:8080/sala/addHorario",
 			data: {'dia':dia,'inicio':inicio,'fim':fim},
 			success: function(){
 				
@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 
 function carregar() {
-	$.getJSON( "http://13.82.130.246:8080/api/horarioCadastro", function(data){
+	$.getJSON( "http://localhost:8080/api/horarioCadastro", function(data){
 		
 		for(x = 0; x <  data.length; x++){
 			$(".addDia").append("<tr>" +
