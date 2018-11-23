@@ -2,9 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="menuLogin.jsp"></jsp:include>
 <br/>
-
-
-
  <div id="login">
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
