@@ -131,7 +131,6 @@ public class AlunoController {
 
 		ArrayList<HashMap<String, String>> re = new ArrayList<HashMap<String, String>>();
 		
-		
 		List<Reserva> reserva = rr.findAllReservas();
 		int i = 0;
 		for(Reserva r : reserva) {

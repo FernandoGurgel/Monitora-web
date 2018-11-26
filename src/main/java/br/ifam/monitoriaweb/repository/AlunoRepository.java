@@ -20,5 +20,4 @@ public interface AlunoRepository extends CrudRepository<Aluno, String>{
 
 	@Query("SELECT a FROM Aluno a WHERE email = ?1 and senha = ?2 and tipoaluno = 'Monitor'")
 	Aluno findBymonitor(String username, String password);
-
 }

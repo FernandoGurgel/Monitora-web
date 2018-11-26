@@ -24,6 +24,7 @@
 			</div>
 
 
+
 			<!--Table-->
 			<a:set var="horariosInscritos" value="0" />
 			<div class="container">
@@ -60,18 +61,46 @@
 										</a:if>
 									</a:forEach>
 
-									<th>${reserva.codmonitor.nome}</th>
+			<!--Table head-->
+			<thead class="thead">
+				<tr>
+					<th>Disciplina</th>
+					<th>Monitor</th>
+					<th>Horário Inicio</th>
+					<th>Horário Fim</th>
+					<th>Dia da Semana</th>
+					<th>Sala</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<!--Table head-->
+
+			<!--Table body-->
+			<tbody>
+				<a:forEach var="reserva" items="${lista }" varStatus="rateLoop">
+
+				<a:set var = "horariosInscritos" value = "${horariosInscritos+1}"/>
+					<tr>
+						<a:forEach var="disciplina" items="${listaD }">
+							<a:if test="${disciplina.aluno.id eq reserva.codmonitor.id}">
+								<th>${disciplina.nome}</th>
+							</a:if>
+						</a:forEach>
+						
+						<th>${reserva.codmonitor.nome}</th>
+						
+						
+						<th scope="row">${reserva.horaIncio}</th>
+						<th>${reserva.horaFim}</th>
+						<th>${reserva.dia}</th>
+						<th>${reserva.codsala.nome}</th>
 
 
-									<th scope="row">${reserva.horaIncio}</th>
-									<th>${reserva.horaFim}</th>
-									<th>${reserva.dia}</th>
-									<th>${reserva.codsala.nome}</th>
-
-
-									<th><a type="role" class="btn btn-danger"
-										href="/aluno/sairhorario?id=${reserva.rescodigo }"
-										title="Sair"> Sair </a></th>
+						<th>
+							<a type="role"
+								class="btn btn-danger" href="/aluno/sairhorario?id=${reserva.rescodigo }" title="Sair"> Sair
+							</a>
+						</th>
 
 								</tr>
 							</a:forEach>
@@ -81,8 +110,8 @@
 
 					</table>
 
-					Horários Inscritos:
-					<a:out value="${horariosInscritos}" />
+          Horários Inscritos: <a:out value = "${horariosInscritos}"/>
+
 
 				</div>
 			</div>
