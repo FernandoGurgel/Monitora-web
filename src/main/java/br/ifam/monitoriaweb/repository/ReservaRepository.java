@@ -48,5 +48,4 @@ public interface ReservaRepository extends CrudRepository<Reserva, String>{
 
 	@Query("SELECT r FROM Reserva r ")
 	List<Reserva>  findAllReservas();
-
 }

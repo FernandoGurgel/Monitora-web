@@ -60,11 +60,13 @@ public class DisciplinaController {
 	
 	@RequestMapping(value="/disciplina/cadastrar", method= RequestMethod.POST)
 	public String cadastrar(Disciplina disciplina, long codAluno) {
+		
 		if( em.findBynome(disciplina.getNome()) != null) {
 			dis = disciplina;
 			return"redirect:/disciplina/cadastrar";
 		}else {			
 			Aluno bean = al.findById(codAluno);
+			disciplina.setQtdVagas(12);
 			disciplina.setAluno(bean);
 			em.save(disciplina);
 			return "redirect:/coordenador/disciplina";			
@@ -93,8 +95,8 @@ public class DisciplinaController {
 	}
 	
 	@RequestMapping(value="/disciplina/editar", method= RequestMethod.POST)
-	public String editar(Disciplina disciplina, String nomeAluno) {
-		Aluno bean = al.findByNome(nomeAluno);
+	public String editar(Disciplina disciplina, long codAluno) {
+		Aluno bean = al.findById(codAluno);
 		disciplina.setAluno(bean);
 		em.save(disciplina);
 		return "redirect:/coordenador/disciplina";

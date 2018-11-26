@@ -103,6 +103,7 @@ public class AlunoController {
 			view.addObject("icon", "<i class='fas fa-exclamation-circle'></i> ");
 			view.addObject("alert", 1);
 			view.addObject("aluno", aluno);
+			aluno = null;
 			return view;			
 		}else 
 			return view;
@@ -129,7 +130,6 @@ public class AlunoController {
 		boolean entrou = false;
 
 		ArrayList<HashMap<String, String>> re = new ArrayList<HashMap<String, String>>();
-
 		
 		List<Reserva> reserva = rr.findAllReservas();
 		int i = 0;

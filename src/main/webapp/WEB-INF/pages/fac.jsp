@@ -44,16 +44,45 @@
 			<hr class="star-light mb-5">
 			<div class="row">
 				<div class="col-lg-4 ml-auto">
-					<p class="lead"> <b>Posso ser monitor de uma disciplina e aluno de outra ?</b>
+					<p class="lead"> <b>Como monitor posso qual o horário mínimo e máximo de horas semanais  que posso cumprir as monitorias?
+</b>
 					<br>
-					R= Não, todo monitor pode se inscrever em monitorias desde que não dê conflito de horário </p>
+					R= O mínimo são de 6 horas semanais é o máximo são de 12 horas semanais
+
+					<br>
+					<br>
+					<b>Posso ser monitor de 2 disciplinas?</b>
+					<br>
+					R= Não, você deve apenas ser monitor de uma matéria no tempo máximo 1 ano e mínimo de 4 meses.
+				</p>
 				</div>
 				<div class="col-lg-4 mr-auto">
-					<p class="lead"></p>
+					<p class="lead"><b>Como monitor posso escolher que dias as monitorias?</b>
+					<br>
+					R= Você deve escolher apenas de segunda a sexta na faixa de horário das 7h às 23h
+<br>
+					<br>
+					<b>Posso ser monitor de uma disciplina que fiz mais de uma vez?
+</b>
+					<br>
+					R= Não, pois para ser monitor você não deve ter reprovado na matéria e também tem que ter feitas todas as matérias do primeiro período
+
+
+					</p>
 				</div>
 
 				<div class="col-lg-4 mr-auto">
-					<p class="lead"></p>
+					<p class="lead"><b>Qual a quantidade máxima de alunos que o monitor deve atender?</b>
+					<br>
+					O monitor deve atender no máximo 12 
+					<br>
+					<br>
+					<br>
+					<br>
+					<b>Posso ser monitor e aluno da mesma disciplina?</b>
+					<br>
+					R= Não, Deve escolher entre aluno ou monitor daquela disciplina.
+					</p>
 				</div>
 
 			</div>
